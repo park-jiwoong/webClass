@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<style>
+		/* body {
+			border: solid 1px red;
+			padding: 0;
+			margin: 0;
+		} */
+	</style>
+
+	<style>
+		/* table 스타일 지정 */
+		table {
+			/* 
+			border: solid 1px #ddd;
+			margin-top: 0;
+			margin-left: auto;
+			margin-bottom: 0;
+			margin-right: auto;
+			*/
+			margin: 0 auto; 	/* 약식 */
+
+			width: 400px;
+			
+			border-collapse: collapse; /*collapse 붕괴되다, 무너지다, 의자를 접다*/
+		}
+
+		th, td {
+			border: solid 1px #ddd;
+		}
+
+		button{
+			border: solid 1px #ddd;
+		}
+
+		/* 배경색 설정*/
+		thead tr th{
+			background-color: #000; 
+			color: #fff;
+		}
+
+		/*
+		tbody tr:nth-child(1), tbody tr:nth-child(3){
+			background-color: #ddd;
+		}
+		*/
+		/*짝수 홀수*/
+		/*tbody tr:nth-child(even)*/
+		tbody tr:nth-child(odd){
+			background-color: #ddd;
+		}
+
+		tbody tr:hover{
+			border: 1px solid #ddd;
+			background-color: red;
+			color: white;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- 
+	[table] 태그
+		ㄴ 데이터를 행/열로 출력
+		ㄴ 배치 활용
+	th [t]able [h]earder cell
+   deptno   dname           loc         	컬럼명 <th>     
+   10<td>  	ACCOUNTING      NEW YORK  <tr> 	행	tr table row
+   20     	RESEARCH      	DALLAS<br>      	행
+   30      	SALES         	CHICAGO<br>        행
+   40      	OPERATIONS      BOSTON<br>     	행
+
+   ㄴ <th>, <tb> cell 안에 html의 엘리먼트(요소), 텍스트, 이미지, 목록, 링크, table 등등을 포함할 수 있다.
+	
+	 -->
+	<!-- <table border="1" width="100%"> -->
+	<!-- <table border="1" style="width: 100%"> -->
+	<table>
+		<caption>부서 정보</caption>
+		<thead>
+			<tr>
+				<th>deptno</th> <!-- 안에 들어가 있는 값으로 자동으로 크기가 잡힘-->
+				<th>dname</th>
+				<th>loc</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>10</td><!-- table date -->
+				<td>NEW YORK</td>
+				<td>RESEARCH</td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td>RESEARCH</td>
+				<td>DALLAS</td>
+			</tr>
+			<tr>
+				<td>30</td>
+				<td>SALES</td>
+				<td>CHICAGO</td>
+			</tr>
+			<tr>
+				<td>40</td>
+				<td>OPERATIONS</td>
+				<td>BOSTON</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3" align="center"><!-- 컬럼을 합쳐주는 colspan-->
+					<button>추가</button>
+					<button>삭제</button>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	</table>
+</body>
+
+</html>

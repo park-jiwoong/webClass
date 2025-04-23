@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>days03 시험</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+    </style>
+
+</head>
+
+<body>
+    <h1>jQuery 사용</h1>
+    <button id="btnHide" style="color: purple;">숨기기</button>
+    <button id="btnShow" style="color: purple;">보이기</button>
+    <br>
+    <span id="team3">
+        <span id="s1" style="color: red;">서재웅&nbsp&nbsp&nbsp박지웅</span>
+        <br>
+        <span id="s2" style="color: red;">김예지&nbsp&nbsp&nbsp변상호</span>
+        <br>
+        <span id="s3" style="color: red;">김현수&nbsp&nbsp&nbsp김민선</span>
+        <br>
+
+    </span>
+
+    <script>
+        $("#btnHide").on("click", function(){
+            $("#team3").hide();
+            $(this).hide();
+            $("#btnShow").show();
+        });
+
+        $("#btnShow").on("click", function(){
+            $("#team3").show();
+            $(this).hide();
+            $("#btnHide").show();
+        });
+    </script>
+</body>
+
+</html>

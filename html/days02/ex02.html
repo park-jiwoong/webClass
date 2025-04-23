@@ -7,27 +7,27 @@
 </head>
 <body>
 
-    <h3>상대 경로(URL)</h3>
+<h3>상대 경로(URL)</h3>
 
-	<a href="http://localhost/webPro/images/SiSt.ico">SiSt.ico(절대경로)</a><br>
-	<a href="../../images/SiSt.ico">SiSt.ico(상대경로)</a><br>
-	<!-- ↓ 요청 주소가 올바른지 확인해야함 "/"은 도메인까지 잡혀버림 -->
-	<a href="/../../images/SiSt.ico">SiSt.ico(슬러쉬로 시작할 때)</a><br>
-	<!-- /webPro/images/SiSt.ico	domain/context root/하위)  -->
+<a href="http://localhost/webPro/images/SiSt.ico">SiSt.ico</a><br>
+<a href="../../images/SiSt.ico">SiSt.ico</a><br>
+<!-- /webPro/images/SiSt.ico    domain/context root/하위경로/파일명 -->
+<a href="/webPro/images/SiSt.ico">SiSt.ico</a><br>
 
 <hr>
 
-    <a href="http://localhost/webPro/html/days01/ex12.html">html 서식 요소(절대 경로)</a><br>
-    <a href="../days01/ex12.html">html 서식 요소(상대 경로)</a><br>
-    <a href="./../days01/ex12.html">html 서식 요소(상대 경로)</a><br>
-    
-    <hr>
-    <!--절대 경로(URL) -->
-    <a href="http://localhost/webPro/html/days02/ex01.html">html 링크</a>
-    <br>
-    <!-- 상대 경로(URL) -->
-    <a href="ex01.html">html 링크</a><br>
-    <a href="./ex01.html">html 링크</a><br>
+<a href="http://localhost/webPro/html/days01/ex12.html">html 서식 요소(절대경로)</a><br>
+<a href="../days01/ex12.html">html 서식 요소(상대경로)</a><br>
+<a href="./../days01/ex12.html">html 서식 요소(상대경로)</a><br>
+
+<hr>
+<!-- 절대 경로(URL) -->
+<a href="http://localhost/webPro/html/days02/ex01.html">html 링크</a>
+<br>
+<!-- 상대 경로(URL) -->
+<a href="ex01.html">html 링크</a><br>
+<a href="./ex01.html">html 링크</a><br>
+
 
 </body>
 </html>

@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <title>Insert title here</title>
-    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
 </head>
-
 <body>
-    <h3>html 이미지</h3>
-    <!--
-        1. 이미지는 웹 페이지의 디자인과 모양을 개선할 수 있다.
-        2. [인라인 모드]/블럭 모드
-        3. alt - 이미지를 대체할 텍스트를 지정하는 속성
-        , src 속성 - 이미지가 있는 경로(URL)을 주는 속성
-        4. 이미지 크기를 반드시 설정하는 것이 좋다.
-        (왜? 이미지를 로딩하는 동안 웹페이지가 깜빡일 수 있기 때문에)
-        5. html 에서 단위를 생략하면 px 이다
-        6. 모든 브라우저에서 지원하는 이미지 파일 형식
-            gif, ico, jpeg, png, svg, apng
-    -->
-    <img alt="Italian Trulli" src="http://localhost/webPro/html/images/pic_trulli.jpg" width="300" height="200">
-    <img alt="Italian Trulli" src="../images/pic_trulli.jpg" style="width: 300px;height: 200px">
-
-    <hr>
-
-    <a href="http://localhost/webPro/html/images/pic_trulli.jpg"
-    target="_blank">
-    <img alt="Italian Trulli" src="../images/pic_trulli.jpg"
-    style="width: 100px;height: 75px">
-
-    </a>
-
+  <h3>html 이미지</h3>
+  <!--
+     1. 이미지는 웹 페이지의 디자인과 모양을 개선할 수 있다.
+     2. [인라인 모드]/블럭 모드
+     3. alt - 이미지를 대체할 텍스트를 지정하는 속성
+      , src 속성 - 이미지 경로(URL)
+       필수
+     4. 이미지 크기(너비+높이)를 반드시 설정하는 것이 좋다 . 
+       ( 왜 ? 이미지를 로딩하는 동안 웹페이지가 깜빡일 수 있기 때문에 )
+       
+     5. html 에서 단위를 생략하면 px 이다.   
+     6. 모든 브라우저에서 지원하는 이미지 파일 형식
+        gif, ico, jpeg, png, svg, apng  
+   -->
+  <img alt="Italian Trulli" src="http://localhost/webPro/html/images/pic_trulli.jpg" width="300" height="200">
+  <img alt="Italian Trulli" src="../images/pic_trulli.jpg" style="width: 300px;height: 200px">
+  
+  <hr>
+  <!-- 500 x 333 -->
+  <!-- 100 x 333/5 -->
+  <a href="http://localhost/webPro/html/images/pic_trulli.jpg"
+   target="_blank">
+    <img alt="Italian Trulli" src="../images/pic_trulli.jpg" 
+    style="width: 100px; height:75px">
+  </a>
+  
 </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

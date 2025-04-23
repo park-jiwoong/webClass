@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-   <meta charset="UTF-8">
-   <title>Insert title here</title>
-   <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-   <style>
-      span {
-         border: solid 1px gray;
-      }
-   </style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  span{
+    border:solid 1px gray;
+  }
+</style>
 
 </head>
-
 <body>
-   <span id="team1">
-      1조 -
-      <span id="s01">양재원</span>
-      <span id="s02">최승호</span>
-      <span>김승효</span>
-      <span>안준호</span>
-      <span>이정인</span>
-      <span style="display: none;">최인석</span>
-   </span>
-   <br>
-   <span id="team2">
-      2조 -
-      <span id="s01">양재원</span>
-      <span id="s02">최승호</span>
-      <span>김승효</span>
-      <span>안준호</span>
-      <span>이정인</span>
-      <span style="display: none;">최인석</span>
-   </span>
-   <br>
-
-   <button id="btnHide">1조 숨기기</button>
-   <button id="btnShow" style="display: none">1조 보이기</button>
-
-   <script>
-      //$("#아이디명") == document.getElementById("아이디명"); ★ jQuary 객체 ★
-      $("#btnHide").click(function () {
-         console.log("click~");
-         //$("#team1").css("display", "none");
-         $("#team1").hide();
-         //$("#btnHide").hide();
-         $(this).hide();
-
-         //$("#btnShow").css("display", "none");
-         $("#btnShow").show();
-      });
-
-      // on 함수
-      $("#btnShow").on("click", function () {
-         //console.log("test");
-         $("#team1").show();
-         $(this).hide();
-         $("#btnHide").show();
-      });
-   </script>
+ <span id="team1">
+    1조 - 
+    <span id="s01">양재원</span> 
+    <span id="s02">최승호</span> 
+    <span>김승효</span> 
+    <span>안준호</span> 
+    <span>이정인</span> 
+    <span style="display: none;">최인석</span> 
+ </span>  
+ <br>
+ <span id="team2">
+    2조 -  
+    <span id="s01">양재원</span> 
+    <span id="s02">최승호</span> 
+    <span>김승효</span> 
+    <span>안준호</span> 
+    <span>이정인</span> 
+    <span style="display: none;">최인석</span> 
+ </span>   
+    <br>
+    <button id="btnHide" >1조 숨기기</button>
+    <button id="btnShow" style="display: none">1조 보이기</button>
+    
+<script>
+  // $("#아이디명") == document.getElementById("아이디명");
+  $("#btnHide").click(function (){
+	  //console.log("click~");	
+	  // $("#team1").css("display","none");
+	  $("#team1").hide();
+	  // $("#btnHide").hide();	  
+	  $(this).hide();
+	  // $("#btnShow").css("display","inline");
+	  $("#btnShow").show();	  
+  });  
+  
+  $("#btnShow").on("click", function (){
+	  // console.log( "test" );
+	  $("#team1").show();
+	  $(this).hide();
+	  $("#btnHide").show();
+  });
+</script>    
 </body>
-
 </html>
+
+
+
+
+
+
