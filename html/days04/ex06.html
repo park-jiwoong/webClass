@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>2025. 4. 24. 오후 12:15:17</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <!-- 
+    ㄴ emmet 약어 구문이다.
+    ㄴ css 선택자(selector) 와 유사하다(동일하다)    
+ -->
+  <!-- pre Ctrl  +E -->
+  <!-- 
+ <pre></pre>
+ <div></div>
+ <div /> 
+ <p></p>
+ <img src="" alt="" >
+  -->
+
+  <!-- 여러 개의 요소를 생성할 때 중첩 연산자  > -->
+  <!-- div>ul>li*3 -->
+  <div>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+  </div>
+
+  <!-- 형제 연산자  +  -->
+  <!-- div>h2+h3+h4 -->
+  <!-- div>h$*6 -->
+
+  <!-- div>h$@2*3 -->
+  <div>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+  </div>
+
+  <!-- 문제 1 -->
+  <div></div>
+  <p></p>
+  <blockquote></blockquote>
+
+  <!-- div+p+blockquote -->
+  <!-- div+p+bq -->
+  <div></div>
+  <p></p>
+  <blockquote></blockquote>
+
+  <!-- 문제 2 -->
+  <div></div>
+  <div>
+    <p><span></span><em></em></p>
+  </div>
+
+  <!-- div+div -->
+  <!-- div*2 -->
+  <!-- div+div>p>span+em -->
+  <div></div>
+  <div>
+    <p><span></span><em></em></p>
+  </div>
+
+  <!-- 문제 3 -->
+  <div>
+    <p><span></span><em></em></p>
+  </div>
+  <div></div>
+
+  <!-- div>p>span+em^^div -->
+  <div>
+    <p><span></span><em></em></p>
+  </div>
+  <div></div>
+
+  <!-- (div>p>span+em)+div -->
+  <div>
+    <p><span></span><em></em></p>
+  </div>
+  <div></div>
+
+
+  <div>
+    <p><span></span><em></em></p>
+  </div>
+  <div>
+    <p><span></span><em></em></p>
+  </div>
+
+  <!-- () 그룹화 연산자 -->
+  <!-- (div>p>span+em)*2 -->
+  <div>
+    <p><span></span><em></em></p>
+  </div>
+  <div>
+    <p><span></span><em></em></p>
+  </div>
+
+  <!-- div*2>p>span+em -->
+  <div>
+    <p><span></span><em></em></p>
+  </div>
+  <div>
+    <p><span></span><em></em></p>
+  </div>
+
+  <!-- 문제 4 -->
+  <!-- 
+<div></div>
+<div>
+    <p><span></span><em></em></p>
+</div>
+<blockquote></blockquote>
+ -->
+
+  <!-- div+div>p>span+em^^bq -->
+  <!-- div+(div>p>span+em)+bq  -->
+
+  <!-- 문제5 -->
+  <div>
+    <header>
+      <ul>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+      </ul>
+    </header>
+    <footer>
+      <p></p>
+    </footer>
+  </div>
+  <!-- div>(header>ul>li*2>a)+footer>p -->
+
+  <!--  문제 6 -->
+  <div>
+    <dl>
+      <dt></dt>
+      <dd></dd>
+      <dt></dt>
+      <dd></dd>
+      <dt></dt>
+      <dd></dd>
+    </dl>
+  </div>
+  <footer>
+    <p></p>
+  </footer>
+  <!-- (div>dl>(dt+dd)*3)+footer>p -->
+
+
+
+</body>
+
+</html>

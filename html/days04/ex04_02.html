@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>2025. 4. 24. 오전 10:13:41</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: solid 1px gray;
+        }
+
+        div:nth-child(2) div:nth-of-type(2) {
+            /*← 화면에 다르게 나오는 이유*/
+            background-color: red;
+            visibility: hidden;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!-- visibility / display 속성 차이점 -->
+
+    <button>숨긴 div 요소 보이기</button>
+
+    <!-- div*4>{$} -->
+    <div>1</div>
+    <div>2</div>
+    <!-- <div id="third">3</div> -->
+    <div>3</div>
+    <div>4</div>
+    
+    <script>
+        /* 
+        [1] javascript
+        const tdiv = document.getElementById("third");
+        // style="backgound-color:yellow"
+        // Uncaught SyntaxError: Invalid left-hand side in assignment
+        tdiv.style.backgroundColor = "yellow";
+        */
+
+        /*
+        [2] jQuery
+        $("#third").css("background-color", "yellow");
+        */
+
+        /*
+        [3] javascript
+        const divList = document.querySelectorAll("body > div");
+        // console.log( divList.length );
+        divList[2].style.backgroundColor = "yellow";
+        */
+
+        [4]
+        // alert( $("body > div").length );
+        $("body > div").eq(2)
+            .css("background-color", "yellow")
+            .on("click", function () {
+                // alert("이벤트 확인")
+                // $(this).css("visibility","hidden");
+                $(this).css("display", "none");
+            });
+    </script>
+</body>
+
+</html>

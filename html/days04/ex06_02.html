@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>2025. 4. 24. 오후 2:29:09</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- 젠 코딩 (emmet) 약어 -->
+    <!-- 속성 연산자 []-->
+    <!-- <div 속성명="속성값"속성명="속성값"속성명="속성값"></div> -->
+    <div id="box1"></div>
+
+    <!-- div[id] -->
+    <div id=""></div>
+
+    <!-- div[id="box1"] -->
+    <!-- div[id='box1'] -->
+    <!-- div[id=box1] -->
+    <!-- #box1 -->
+    <!-- div#box1 -->
+
+    <div id="box1" class="class1"></div>
+    <!-- div[id="box1"][class="class1"] -->
+    <!-- div[id="box1" class="class1"] -->
+    <!-- #box1.class1 -->
+
+    <div id="header" class="box1 box2 box3"></div>
+    <!-- #header[class="box1 box2 box3"] -->
+    <!-- #header.box1.box2.box3 -->
+
+    <div class="box1"></div>
+    <!-- .box1 -->
+
+    <font size="7" color="red" face="궁서체"></font>
+    <!-- font[size="7" color='red' face=궁서체] -->
+
+    <!-- 속성값이 공백이 있는 경우에는 꼭  "" , '' -->
+
+    <hr>
+
+    <!-- 항목 번호 매기기 :  $ -->
+    <!-- h1*6 -->
+    <!-- h$*6 -->
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
+
+    <!-- 문제 -->
+    <ul>
+        <li class="item1"></li>
+        <li class="item2"></li>
+        <li class="item3"></li>
+        <li class="item4"></li>
+        <li class="item5"></li>
+    </ul>
+
+    <!-- ul>li[class=item$]*5 -->
+    <!-- ul>li.item$*5 -->
+
+
+    <ul>
+        <li class="item001"></li>
+        <li class="item002"></li>
+        <li class="item003"></li>
+        <li class="item004"></li>
+        <li class="item005"></li>
+    </ul>
+
+    <!-- ul>li.item00$*15 -->
+    <!-- ul>li.item$$$*15 -->
+
+    <!-- ul>li.item$*5 -->
+
+    <!-- @- 번호가 뒤에서 매겨지더라.. -->
+    <!-- ul>li.item$@-*5 -->
+
+    <!-- @3 시작값이 3부터 매겨지더라 -->
+    <!-- ul>li.item$@3*5 -->
+
+    <ul>
+        <li class="item7"></li>
+        <li class="item6"></li>
+        <li class="item5"></li>
+        <li class="item4"></li>
+        <li class="item3"></li>
+    </ul>
+
+    <!-- ul>li.item$@-3*5 -->
+
+    <!-- 텍스트 {} -->
+    <div>홍길동</div>
+    <!-- div{홍길동} -->
+    <!-- div>{홍길동} -->
+
+    <a href="">Click me</a>
+    <!-- a[href]{Click me} -->
+    <!-- a{Click me} -->
+    <a href="">Click me</a>
+
+    <!-- ul>li{item}*5 -->
+    <!-- ul>li{item$}*5 -->
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+    </ul>
+
+
+    <a href="">click</a><b>here</b>
+    <!-- a{click}+b{here} -->
+
+    <a href="">click<b>here</b></a>
+    <!-- a{click}>b{here} -->
+
+    <p>Click <a href="">here</a> to continue</p>
+    <!-- p>{Click}+a{here}+{ to continue} -->
+
+    <!-- p{Click} -->
+    <!-- p>{Click} -->
+
+    <hr>
+
+    <!-- (header>ul.nav>li*5>{item$})+footer -->
+    <header>
+        <ul class="nav">
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+        </ul>
+    </header>
+    <footer></footer>
+
+    <hr>
+    <div id="page">
+        <div class="logo"></div>
+        <ul id="navigation">
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
+    </div>
+
+    <!-- #page>.logo+ul#navigation>li*5>a -->
+
+
+</body>
+
+</html>
