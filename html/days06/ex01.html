@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert title here</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <form action="" method="get">
+        <input type="hidden" name="nickname" value="admin"> <br>
+        <input type="hidden" name="age" value="20"><br>
+
+        <br>
+        <input type="image" src="../images/programming.gif">
+        <input type="image" src="../images/programming.gif">
+        <br>
+        <input type="month">
+        <br>
+        국어: <input type="number" min="0" max="100" value="0">
+        <br>
+        <input type="button" id="exec" value="입력값 확인 후 서브밋">
+
+        <hr>
+        볼륨: <input type="range" min="0" max="100" value="10">
+        <div id="demo"></div>
+        <br>
+
+    </form>
+
+    <script>
+        function init() {
+            const range = document.querySelector('input[type="range"]');
+
+            // range.addEventListener('change', function (e) { 볼륨 바를 움직이고 커서의 마우스를 땠을때 값이 정해짐
+                ange.addEventListener('change', function (e) {
+                console.log('값이 바뀜:', e.target.value);
+                demo.innerHTML = <span style='color:red'>${range.value}</span>
+            });
+
+            //demo.innerText = <span style='color:red'>${range.value}</span>
+        }
+
+
+        document.querySelector("#exec").addEventListener("click", function () {
+            alert("입력값에 대한 유효성 검사 한 후");
+            // js 코딩으로 서브밋(암기)
+            document.forms[0].summit();
+        });
+    </script>
+
+</body>
+
+</html>

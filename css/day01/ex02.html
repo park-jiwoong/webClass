@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내부적(internal) CSS 적용방법</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="ex02_style.css">
+
+<style>
+    /*1. 내부적(internal)*/
+p{  /*1점*/
+    color: red;
+}
+
+</style>
+<!-- <link rel="stylesheet" href="ex02_style.css"> 순서의 차이가 날 수 있음-->
+</head>
+<body>
+    <!--
+        CSS 적용 3번째 방법: 외부적(external) CSS 적용방법
+                        ㄴ css 파일 생성 + 적용
+    -->
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Corporis placeat dolorem earum iusto.</p>
+    <!-- 2. 인라인  CSS 적용방법 1000점 -->
+    <p style="color:blue">Nesciunt quod hic dicta illum!</p>
+
+</body>
+</html>

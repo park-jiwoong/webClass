@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body{
+            /*배경 css 이미지 가로/세로 반복*/
+            /*
+            background-color: rgb(17, 129, 13);
+            background-image: url('../images/img_tree.gif');
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: fixed;
+            */
+            
+            /* 약식으로 위의 코딩을 표현 */
+            /* background: rgb(23, 105, 23) url('../images/img_tree.gif') no-repeat right top fixed; */
+            background:url('../images/img_tree.gif') no-repeat right top fixed;
+            /* 약식으로 배경색만.. background: red; */
+        }
+
+        div#top{    /*1점 + 100점*/
+           /* d border-width: 1px;
+            border-style: solid;
+            border-color: gray; */
+
+            /*약식*/
+            border: 1px solid gray;
+
+            width: 25px;
+            height: 25px;
+
+            position: fixed; /* 위치 고정 */
+            right: 5px;
+            bottom: 5px;
+        }
+
+        /* ::의사요소, [:의사클래스 : 특정상태] */
+        div#top:hover{
+            background-color: black;
+            color: yellow;
+            font-weight: bold;  /*100 ~ 900*/
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- #top{top}+h3{css 배경이미지}+lorem+p*50>{.} -->
+    <div id="top">top</div>
+    <h3>css 배경이미지</h3>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    Dolorum maxime eligendi a blanditiis optio repellat quasi commodi exercitationem,
+    explicabo possimus tenetur voluptates ut distinctio molestias, cupiditate nihil, impedit aperiam saepe.
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <script>
+        // JQuery
+        $("#top").on("click", function(){
+            // Jquery method: animate() 애니메이션 효과 메서드
+            $("html, body").animate({scrollTop: 0}, 'slow');
+        });
+
+        /*
+        const btnTop = document.querySelector("#top");
+        btnTop.addEventListener("click", function(){
+            //alert("이벤트 확인 ");
+            document.body.scrollTop = 0;            // <body> 구형브라우저
+            document.documentElement.scrollTop = 0; // <html> 지금 사용하는 방식
+        });
+        */
+    </script>
+</body>
+</html>
