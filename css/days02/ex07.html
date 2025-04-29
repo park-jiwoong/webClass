@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert title here</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        ul {    /* 1점 */
+            list-style-type: lower-roman;
+
+            list-style-image: url(../images/sqpurple.gif);
+
+            border: 1px solid red;
+        }
+
+        ul.a {
+            list-style-position:inside;
+        }
+            
+        ul.b {
+            list-style-position:outside;
+        }
+            
+        ul>li {
+            border: 1px solid gray;
+        }
+
+        ul,ol {    /* 1점 */
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- CSS 목록 (ol, ul, dl)-->
+    <ul class="a">
+        <li>lorem</li>
+        <li>lorem</li>
+        <li>lorem</li>
+    </ul>
+    <ul class="b">
+        <li>lorem</li>
+        <li>lorem</li>
+        <li>lorem</li>
+    </ul>
+    <ol>
+        <li>lorem</li>
+        <li>lorem</li>
+        <li>lorem</li>
+    </ol>
+</body>
+
+</html>

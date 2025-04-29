@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>diplay, visibility 속성 차이점 + js</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .imgbox {
+            width: 120px;
+            border: 1px solid gray;
+
+            padding: 6px;
+            margin: 4px;
+            text-align: center;
+
+            float: left;
+        }
+
+        .imgbox img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>display, visibility 속성 차이점 + js</h3>
+
+    <div style="display: flex">
+
+        <!-- #imgbox$.imgbox$*3>{box$}+img[src='../images/.jpg']+butten -->
+        <div id="imgbox1" class="imgbox">box1<img src="../images/img_5terre.jpg" alt=""><button>Remove</button></div>
+        <div id="imgbox2" class="imgbox">box2<img src="../images/img_lights.jpg" alt=""><button>Hide</button></div>
+        <div id="imgbox3" class="imgbox">box3<img src="../images/img_forest.jpg" alt=""><button>ResetAll</button></div>
+    </div>
+
+    <script>
+        const btnRemove = document.querySelector("#imgbox1>button");
+        const btnHide = document.querySelector("#imgbox2>button");
+        const btnResetAll = document.querySelector("#imgbox3>button");
+
+        document.querySelector("#imgbox1>button").addEventListener("click", function(){
+            // alert("1")
+            // alert(btnRemove.parentElement); //부모 요소 <div> 태그를 나타냄
+                btnRemove.parentElement.style.display="none";
+        });
+
+        document.querySelector("#imgbox2>button").addEventListener("click", function(){
+            // alert("2")
+            btnHide.parentElement.style.visibility = "hidden"
+        });
+
+        document.querySelector("#imgbox3>button").addEventListener("click", function(){
+            // alert("3")
+            btnRemove.parentElement,display="block"
+            btnHide.parentElement.visibility="visible"
+        });
+    </script>
+</body>
+
+</html>

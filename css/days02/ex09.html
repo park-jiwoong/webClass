@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[반응형 테이블]</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div{
+            /* border: 1px solid red; */
+
+            /* overflow: hidden; */
+            overflow-x: auto;
+            /* overflow: auto; */
+            /* overflow: scroll; (넘첬을때 세로줄 스크롤 생성)*/
+        }
+
+        table{
+            width: 100%;
+            border: 1px solid gray;
+        }
+
+        th,td{
+            border: 1px solid gray;
+            padding: 8px;
+            text-align: center;
+        }
+
+        tr:nth-child(even){ /* even 짝수 odd 홀수*/
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        [반응형 테이블]
+        화면이 너무 작어서 전체 내용을 표시할 수 없는 경우 가로 스크롤 막대를 표시하는 테이블
+
+        방법)
+        1) table 의 컨테이너를 하나 선언한다: <div> 태그 사용
+        2) overflow-x: auto 속성을 설정한다. (x축 == 가로)
+    -->
+
+        <!-- div>table>(tr>th*10>lorem1)+(tr>th*10>lorem1)*3 -->
+        <div>
+            <table>
+                <tr>
+                    <th>Lorem.</th>
+                    <th>Hic!</th>
+                    <th>Assumenda!</th>
+                    <th>Provident!</th>
+                    <th>Corrupti!</th>
+                    <th>Tempora?</th>
+                    <th>Qui!</th>
+                    <th>Aliquid?</th>
+                    <th>Velit.</th>
+                    <th>Necessitatibus.</th>
+                </tr>
+                <tr>
+                    <th>Lorem.</th>
+                    <th>Odit!</th>
+                    <th>Magnam!</th>
+                    <th>Minima.</th>
+                    <th>Sint!</th>
+                    <th>Ut!</th>
+                    <th>Unde.</th>
+                    <th>Est?</th>
+                    <th>Nam?</th>
+                    <th>Aspernatur.</th>
+                </tr>
+                <tr>
+                    <th>Lorem.</th>
+                    <th>Illum.</th>
+                    <th>Nemo.</th>
+                    <th>Sequi?</th>
+                    <th>Ea?</th>
+                    <th>Quam!</th>
+                    <th>Praesentium?</th>
+                    <th>Harum.</th>
+                    <th>Sunt?</th>
+                    <th>Suscipit!</th>
+                </tr>
+                <tr>
+                    <th>Lorem.</th>
+                    <th>Ipsum?</th>
+                    <th>Molestiae.</th>
+                    <th>Soluta?</th>
+                    <th>Sed.</th>
+                    <th>Tempora.</th>
+                    <th>Ducimus?</th>
+                    <th>Facilis.</th>
+                    <th>Sed.</th>
+                    <th>Commodi.</th>
+                </tr>
+            </table>
+        </div>
+</body>
+</html>
