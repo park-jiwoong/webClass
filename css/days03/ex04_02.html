@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insert title here</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    /* CSS 선택자 기능*/
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Verdana, sans-serif;
+    }
+
+    .open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      /* 테두리 없애기 */
+
+      cursor: pointer;
+      opacity: 0.8;
+
+      position: fixed;
+      /* 고정 */
+      right: 28px;
+      bottom: 23px;
+
+      width: 280px;
+    }
+
+    .form-popup {
+      border: 3px solid #f1f1f1;
+      position: fixed;
+      /* 고정 */
+      right: 15px;
+      bottom: 0px;
+
+      z-index: 10;
+      /* 0보다 조금 큰 크기 */
+      display: none;
+      /* 로그인 안보이게 하기 */
+    }
+
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+
+    .form-container input[type=text],
+    .form-container input[type=password] {
+      width: 100%;
+      border: none;
+      background-color: #f1f1f1;
+      margin: 5px 0 22px 0;
+      padding: 15px;
+    }
+
+    .form-container input[type=text]:focus,
+    .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    .form-container .btn {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    .form-container .btn.cancel {
+      background-color: red;
+    }
+
+    .form-container .btn:hover,
+    .open-button:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>팝업(popup) 폼(form)</h3>
+
+  <button class="open-button">Open Form</button>
+  <div class="form-popup" id="myForm">
+    <form action="" class="form-container" autocomplete="off">
+      <h1>Login</h1>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" id="email" name="email" required>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required id="pwd">
+      <button type="submit" class="btn">Login</button>
+      <button type="button" class="btn cancel">Close</button>
+    </form>
+
+    <script>
+      //Jquary
+      $("body > button.open-button").on("click", function(){
+        $("#myForm").show();
+        $("#email").focus();
+      });
+
+      $("#myForm > form > button.btn.cancel").on("click", function(){
+        $("#myForm").hide();
+        $("#email, #pwd").val("");
+      });
+
+    </script>
+</body>
+
+</html>

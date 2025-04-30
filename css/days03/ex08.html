@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[:의사클래스] [::의사요소]</title>
+    <link rel="shortcut icon" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        p {
+            background-color: yellow;
+            padding: 20px;
+
+            display: none;
+        }
+
+        /*
+        div:hover p {
+            마우스 커서가 올라가 있을때 :hover
+            display: block;
+        }
+        */
+    </style>
+
+</head>
+
+<body>
+    <!--
+        [:의사클래스]
+            ㄴ 어떤 요소의 특정 상태를 정의하는 선택자.
+            ㄴ a:hover
+            ㄴ input:focus
+        [::의사요소]
+            ㄴ 어떤 요소의 지정된 부분에 스타일을 정하는 선택자.
+            ㄴ 요소 뒤에 .clearfix::after
+            ㄴ 요소 앞에 ::before
+            ㄴ 첫 글자
+            ㄴ 첫 라인    
+    -->
+    <div>
+        Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit.
+        Deleniti earum.
+        <p>
+            --- Lorem ipsum dolor.
+        </p>
+    </div>
+
+
+
+    <script>
+        // // jquery [1]
+        const div = $("div");
+        const p = $("div p");
+
+        // //jquery method: on()
+        // div
+        //     .on("mouseover" ,function(){
+        //         p.show();
+        //     })
+        //     .on("mouseover" ,function(){
+        //         p.hide();
+        //     });
+        
+
+        
+        /*
+        div.hover(
+            function (){p.show();} //mouseover
+            ,function (){p.hide();} //mouseover
+        );
+        */
+    </script>
+
+
+    <!-- <script> [2]
+        // [js] div 마우스를 올리면 자식 p 태그 보이게하고
+        //          마우스를 내리면 자식 p 태그 안보이게
+        const div = document.querySelector("div");
+        const p = document.querySelector("div p");
+
+        // mouseover / mouseout 이벤트
+        div.onmouseover = function(){
+            // console.log("mouseout");
+            p.style.display = "block";
+        };
+
+        div.addEventListener("mouseout", function(){
+            // console.log("mouseout");
+            p.style.display = "none";
+        });
+
+    </script> -->
+</body>
+
+</html>

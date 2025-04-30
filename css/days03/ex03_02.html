@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[CSS float 속성 실습]</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .box1{
+            border: 3px solid red;
+            padding: 10px;
+            float: right;
+
+            /*
+            1. 블럭모드 : width: 100%; X
+            2. 
+            */
+        }
+
+        .box2{
+            border: 3px solid red;
+            padding: 10px;
+
+            /* 
+            clear 속성
+             ㄴ 부동 요소(float: left) 옆에 있는 요소에 어떤 일이 발생하지 지정하는 속성.
+             ㄴ float 속성에 영향을 받아서 left, right의 속성이 적용
+            */
+            clear: both; /* both는 ↑right 지정 없이 사용해도 가능 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis nostrum animi dolor
+        veniam culpa explicabo quasi magnam tempore neque iste sit saepe vel optio illo voluptates sapiente facilis
+        consequuntur.</div>
+
+</body>
+
+</html>

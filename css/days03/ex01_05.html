@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert title here</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div.container img {
+            width: 100%;
+            height: auto;
+            opacity: 0.3;
+        }
+
+        div.container {
+            position: relative;
+        }
+
+        div.container>div {
+            position: absolute;
+            font-size: 18px;
+        }
+
+        div.container>div.topleft {
+            left: 20px;
+            top: 20px;
+        }
+
+        div.container>div.topright {
+            right: 20px;
+            top: 20px;
+        }
+
+        div.container>div.bottomleft {
+            left: 20px;
+            bottom: 20px;
+        }
+
+        div.container>div.bottomright {
+            right: 20px;
+            bottom: 20px;
+        }
+
+        div.container>div.center {
+            /* border: 1px solid red; */
+            top: 50%;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+    [position 속성]
+    동영상 / 이미지 위에 자막 (텍스트) 출력. 
+    -->
+    <div class="container">
+        <img src="../images/img_5terre_wide.jpg" alt="" width="1000" height="300" />
+        <div class="topleft">topleft</div>
+        <div class="topright">topright</div>
+        <div class="bottomleft">bottomleft</div>
+        <div class="bottomright">bottomright</div>
+        <div class="center">center</div>
+</body>
+
+</html>

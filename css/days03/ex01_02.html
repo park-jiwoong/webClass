@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[CSS position (위치) 속성 - layout] 실습</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .box{
+            border: 1px solid gray;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">Box - 1</div> -->
+    <!--    [암기]
+    [동적으로 요소(Element)를 생성] - HTML DOM (Document Object Model)) + field + method
+    JS 변수 선언 : var, const, let 키워드 <- 변수줄 때
+    -->
+    
+    <script>
+        
+        function init() { }
+        // load 이벤트 등록
+        document.body.onload = addElement;
+
+        function addElement() {
+            const divElement = document.createElement("div");
+            //DOM textNode 생성
+            /*[1]
+            const content = document.createTextNode("Hello World");
+            // <div> 요소의 자식으로 추가
+            divElement.appendChild(content);
+            */
+            //[2]
+            divElement.innerText = "Hello World!!!";
+
+            //js 스타일 적용
+            divElement.style.border = "1px solid gray";
+            divElement.style.width = "100px";
+            divElement.style.height = "100px";
+            divElement.style.textAlign = "center";
+            
+            divElement.classList.add("box");
+
+            // <body> 요소
+            // document.body.appendChild(divElement);
+            
+            // <body>의 첫 번째 자식요소로 추가하는 코딩
+            // document.body.insertBefore(divElement, document.body.firstChild);
+            document.body.prepend(divElement);
+
+            // 이벤트 등록 처리
+            divElement.addEventListener("click", function(){
+                // alert("이벤트 확인")
+                this.classList.remove("box");
+            });
+            
+        }
+    </script>
+
+</body>
+
+</html>
