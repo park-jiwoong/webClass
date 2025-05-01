@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 롤오버(Rolehover) 효과</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        button {
+            display: inline-block;
+            padding: 5px;
+            border: none;
+
+            background-color: red;
+            color: white;
+
+            cursor: pointer;
+        }
+
+        /*
+        button:hover{
+            opacity: 0.7;
+        }
+        */
+    </style>
+</head>
+
+<body>
+    <!-- [마우스 롤오버(Roleover) 효과] -->
+    <!-- button*3>{마우스 롤오버(Roleover) 효과} -->
+    <button type="button">마우스 롤오버(Rolehover) 효과</button>
+    <button>마우스 롤오버(Rolehover) 효과</button>
+    <button>마우스 롤오버(Rolehover) 효과</button>
+
+    <script>
+        // javascript
+        // 마치 배열 처럼 nodelist 사용
+        /*
+        var btns = document.querySelectorAll("button");
+        // alert(btns.length); 3 == js 배열 크기
+        // ★ btns.onclick = function (){} X why? btns nodelist 사용 불가 ★
+        for (let i = btns; i < btns.length; i++)btns
+        btns[i].onmouseout = function () {
+            this.style.backgroundColor = "blue";
+        }
+        btns[i].onmouseout = function () {
+            this.style.backgroundColor = "red";
+        }
+        */
+    </script>
+
+    <script>
+        //Jquery [1] self 한 것 
+        // $(document).ready(function(){
+        //     var $btns = $("button");
+        //     $btns.hover(
+        //         function(){
+        //             $(this).css("background-color", "blue");
+        //         },
+        //         function(){
+        //             $(this).css("background-color", "red");
+        //         }
+        // );
+        // });
+
+        // [2] 강사님 
+        $("button").hover(
+            // mouseover
+            function(){
+                $(this).css("background-color", "blue");
+            },
+            // mouseout
+            function(){
+                $(this).css("background-color", "red");
+            }
+        );
+    </script>
+</body>
+
+</html>

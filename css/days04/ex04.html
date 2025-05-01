@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 평점 (다시 만들자)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        span.fa {
+            font-size: 25px;
+            /* color: orange; */
+        }
+
+        span.fa.checked {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>상품 평점</h3>
+    <div class="star-rating">
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+
+    <p>선택된 평점: <span id="rating-value">0</span></p>
+
+
+    <script>
+        //java script   NodeList는 배열 처럼 처리할 수 있지만, REAL 배열은 아님
+        // const stars = document.querySelectorAll('span.fa.fa-stars');
+        // alert(stars.length);
+
+        // ★ closure 클로저 인터페이스 ★
+        //  var -> closure 인터페이스 -> let
+        /* JAVA script
+        for (let i = 0; i < stars.length; i++) {
+            stars[i].onclick = function(){
+                // alert(`${i} 번째 이벤트 확인`);
+                
+                for (let j = 0; j <= i; j++) {
+                    stars[j].classList.add("checked");
+                }//for j
+
+                for (let j = 0; j <= i; j++) {
+                    stars[j].classList.remove("checked");
+                }//for j
+            }
+        }//for i
+        */
+    </script>
+    <script>
+        // Jquery
+        // alert($("span.fa.fa-stars").length);
+        $("span.fa.fa-stars").on("click", function(){
+            // alert("이벤트 확인");
+            $("span.fa.fa-stars").removeClass("checked");
+            $(this).addClass("checked")
+                    .prevAll("span.fa.fa-stars")
+                        .addClass("checked");
+        });
+    </script>
+</body>
+
+</html>

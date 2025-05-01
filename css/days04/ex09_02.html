@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>롤hover 효과</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        ul{
+            margin-left: 20px;
+            color: blue;
+        }
+        li{
+            cursor: default;
+        }
+        span{
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>lorem1</li>
+        <li>hi-res</li>
+        <li>FLAC</li>
+        <li>24bit 96khz</li>
+    </ul>
+    <script>
+        //java script
+        $("ul li").hover(
+            //mouseover
+            function(){
+                // js: appendChild()
+                // jquery: append()
+                $(this).append("<span>***</span>")
+            }
+            ,function(){
+                // jquery: childern(), last(), remove()
+                // $(this).children().last().remove();
+                $(this).find("span").last.remove();
+            }
+        );
+
+    </script>
+</body>
+
+</html>
