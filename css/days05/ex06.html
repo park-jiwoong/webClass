@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[CSS 2D 전환]</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+
+            /* 약식 전환 */
+            /* transition: width 2s ease, heught 1s, transform 2s; */
+            transition: 2s ease;
+
+            /*
+                transition-property: width;
+                transition-duration: 2s;
+                transition-delay: 1s;
+                transition-timing-function: ease;
+
+                transition-property: height;
+                transition-duration: 2s;
+                transition-delay: 1s;
+                transition-timing-function: ease;
+            */
+
+            /* 전환 */
+            /*
+            transition: width 2s ease, height 2s , transform 2s;
+            */
+            transition: 2s ease;
+
+            /*             
+            transition-timing-function: ease; 전환 효과 속도 곡선
+            ease 기본값: 느리게 시작 ~ 빠르게 ~ 느리게 끝
+            liner: 등속
+            ease-in: 천천히 시작
+            ease-out: 천천히 끝
+            */
+
+        }
+
+        div:hover {
+            width: 200px;
+            height: 200px;
+
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+    1. CSS 2D/3D 변환(transform): 이동, 회전, 크기, 기울기 + js
+
+    2. CSS 전환 (transition): 지정된 시간 동안 속성값을 부드럽게 변경하는 것
+        예) width: 100px -> 마우스 올릴 때 hover -> 200px
+
+    3. 전환에 사용되는 속성
+        1) transition: 약식으로 사용할때 property -> duration -> delay -> timing-function  
+        2) transition-delay: 기다린 후에 전환 시작
+           transition-property: 전환 속성
+           transition-duration: 전환 지속 시간
+            ㄴ 지속 시간을 설정하지 않으면 기본값은 0
+           transition-timing-function: 지속 속도(효과)
+    -->
+    <!-- p*4>{.}^div*10+p*4{.} -->
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</body>
+
+</html>

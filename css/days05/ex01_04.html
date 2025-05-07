@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[다중 배경 이미지]</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+
+    .hero-image {
+      height: 500px;
+      background-color: yellow;
+
+      background: url('../images/img_man.jpg') no-repeat;
+      background-size: cover;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image>.hero-text {
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1>I am Sam</h1>
+      <h3>Lorem ipsum dolor sit.</h3>
+      <button>Hire me</button>
+    </div>
+  </div>
+
+  <p>Lorem ipsum</p>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab saepe fuga minima consequuntur voluptatibus odio quas
+    tenetur nihil quibusdam molestiae reiciendis libero ducimus hic aliquam dolorem ad sunt, fugiat itaque?</p>
+</body>
+
+</html>

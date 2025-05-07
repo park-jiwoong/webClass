@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 애니메이션 처리 - 로딩 이미지 처리</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .tooltip {
+            border-bottom: 1px dotted;
+            display: inline-block;
+
+            position: relative;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            position: absolute;
+            /* bottom:150%; 위 */
+
+            left: 50%;
+            top: 150%;
+
+            margin-left: -60px; /* width:120/2 */
+            
+            z-index: 1;
+            background-color: black;
+            color: white;
+
+            width: 120px;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            /* top: 100% 위 */
+            bottom: 100%; /* 아래 */
+            left: 50%;
+
+            border-width: 5px;
+            border-style: solid;
+            /* border-color: black transparent transparent transparent; 위 */
+            border-color: transparent transparent black transparent;
+            margin-left: -5px;
+        }
+    </style>
+</head>
+
+<body>
+    <pre>
+        [CSS 툴팁기능(Tooltip)]
+        요소에 마우스를 올리면 추가 정보를 풍선 도움말 처럼
+        보여주는 기능.
+      </pre>
+      
+      <div class="tooltip">HOver Me
+        <span class="tooltiptext">Tooltip Info</span>
+      </div>
+</body>
+
+</html>
