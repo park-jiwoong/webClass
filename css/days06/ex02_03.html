@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[CSS grid (그리드 컬럼, row)]</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    body {
+      font-size: 2rem;
+      /* 32px */
+      font-weight: bold;
+    }
+
+    header,
+    main,
+    aside,
+    footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header {
+      background-color: black;
+      color: white;
+    }
+
+    main {}
+
+    aside {
+      background-color: #ff9d00;
+    }
+
+    footer {
+      background-color: black;
+      color: white;
+    }
+  </style>
+  <style>
+    body {
+      display: grid;
+
+      width: 100vw;
+      height: 100vh;
+
+      margin: 0;
+
+      /* grid-template-columns: auto auto auto auto; ↓ 아래랑 같은 코딩 */
+      /* grid-template-columns: repeat(4, auto); */
+
+      /* grid-template-areas: 
+          'header header header header'
+          'main main main aside'
+          'footer footer footer footer'; */
+
+      /* fr  "분수를 의미하는 단위" */
+      grid-template-columns: 3fr 1fr;
+      /* 4개의 열을 만들려고 함 (전체의 25% / 4분의 1)*/
+      grid-template-rows: 100px auto 50px;
+      grid-template-areas:
+        'header header'
+        'main aside'
+        'footer footer';
+    }
+
+    header {grid-area: header;}
+    main {grid-area: main;}
+    aside {grid-area: aside;}
+    footer {grid-area: footer;}
+  </style>
+</head>
+
+<body> <!-- 그리드 컨테이너 역활을 하는 body -->
+
+  <!-- 그리드 항목 -->
+  <header>header</header>
+  <main>main :)</main>
+  <aside>side</aside>
+  <footer>footer</footer>
+
+</body>
+
+</html>
