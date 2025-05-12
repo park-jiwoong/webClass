@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+ 	span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ 	}  
+
+    .box{
+        color: red;
+        font-size: 30px;
+        border: 1px solid gray;
+    }
+	</style>
+</head>
+<body>
+<header>
+    <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+    <ul>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        
+    </ul>
+</header>
+<div>
+    <xmp class="code">
+        [js - 아래 3개의 스타일 지정]
+        1. 글 색상  color
+        2. 글 크기 font-size
+        3. 테두리 border
+
+        마우스를 올릴 때 - mouseover 이벤트 처리
+    </xmp>
+
+    <div id="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur saepe debitis impedit corporis dolorem omnis hic delectus consequatur accusamus soluta labore dicta aliquam, fuga a culpa odio mollitia quaerat odit.</div>
+
+    <script>
+        document.querySelector("#demo").onmouseover = function(){
+            // console.log(event.srcElement + "/" + event.target + "/" +event.type);
+            // alert(this); [object HTMLDivElement]
+            // this.style.color = "red";
+            // event.srcElement.style.fontsize = "30px";
+            // event.target.style.border = "1px solid gray";
+
+            // this.classList.add - "box";
+            // this.className = "box";
+            this.setAttribute("class", "box");
+        }
+    </script>
+</div>
+
+<body>
+
+</html>

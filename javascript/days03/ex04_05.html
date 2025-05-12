@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>js 엄격 모드</title>
+   <link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+   <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+   <style>
+      span.material-symbols-outlined {
+         vertical-align: text-bottom;
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <h1 class="main">
+         <a href="#" style="position: absolute; top: 30px">Park Jiwoung</a>
+      </h1>
+      <ul>
+         <li><a href="#">로그인</a></li>
+         <li><a href="#">회원가입</a></li>
+      </ul>
+   </header>
+   <div>
+      <xmp class="code">
+      </xmp>
+   </div>
+
+   <script>
+      "use strict"
+      // js 변수를 선언하지 않고도 사용할 수 있다.
+      // [반드시 js에서 변수를 선언하고 사용] 설정 가능
+      // use strict 엄격모드로 변수를 선언하고 사용
+      // 자바스크립트를 더 엄격하게 해석하도록 지시하는 명령어
+      // 스크립트나 함수의 상단에 작성하면, 해당 범위에 엄격한 규칙이 적용
+      age = "20";
+      console.log(Nname);
+
+      // Uncaught ReferenceError: Name is not defined
+      // console.log(Nname);
+      // console.log(name);
+   </script>
+
+   <script> //함수 내부에서만 사용:
+      function test() {
+         "use strict"
+         // test 함수 안에서는 반드시 변수를 선언하고 사용하는 엄격모드를 실행
+      }
+   </script>
+</body>
+
+</html>
