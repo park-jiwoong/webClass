@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키 이벤트 팀원 이름 입력</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+            [키 이벤트]
+            (1) keydown - 키보드를 누를 때, 이벤트 취소 O, 대소문자 X, 기능키 O
+            (2) keypress - 키보드를 누를 때, 이벤트 취소 O, 대소문자 O, 기능키 X
+            (3) keyup - 키보드를 놓을 때, 이벤트 취소 X
+        </xmp>
+
+        <input type="radio" id="rdbp" name="group" value="1" checked="checked"> p 요소
+        <input type="radio" id="rdbs" name="group" value="2"> select 요소
+
+
+        <br>
+        팀원 이름 입력 :
+        <input type="text" id="name" name="name" autofocus="autofocus">
+
+        <p id="demo">
+        </p>
+
+        <select>
+        </select>
+
+        <script>
+            // 모든 radio 보튼
+            // $All("input[name=group]")
+            const p = $("#demo")
+            const sel = $("input[name=group]")
+
+            ""
+
+            //js
+            $("#name").on("keyup", function(){
+                if(event.which == 13){
+                    let checkedRadioValue = $("radio[name=group][type=radio]:checked")
+                }
+            });
+
+
+
+            let checkedRadioValue = $("input[type=radio][name=group]:checked").value;
+
+                    if (checkedRadioValue == 1) {
+                        document.createElement("li");
+                        li.innerText = this.value;
+                        $("#demo").append($(''))
+                        p.appendChild(li);
+                    } else if (checkedRadioValue == 2) {
+                        sel.innerHTML += `<option>${this.value}</option>`;
+                    } // if
+            
+
+        </script>
+    </div>
+
+</body>
+
+</html>
