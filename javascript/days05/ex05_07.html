@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오름차순 정렬</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+            [js 배열 - 검색]
+            indexOf() / lastIndexOf()
+            includes()
+
+            findIndex() / findLast() / findLastIndex()
+        </xmp>
+
+    </div>
+    <script>
+        const m = [27, 28, 30, 40, 42, 35, 30];
+        let n, index;
+        // indexOf(찾을값 [, 시작위치]) : 찾은 위치값을 반환
+        // document.write(m.indexOf(30) + "<br>"); //2
+        // document.write(m.indexOf(30, 3) + "<br>"); //6
+        // document.write(m.includes(30) + "<br>"); //true
+
+        // 
+        n = m.find((Element)=> Element == 30 );
+        index = m.findIndex((Element)=> Element == 30 );
+        document.write(n+"/"+index+"<br>");
+    </script>
+</body>
+
+</html>

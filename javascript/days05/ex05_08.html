@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverse sort</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+            sort()
+            reverse()
+
+            toString()
+            toReversed()
+        </xmp>
+
+    </div>
+    <script>
+        const m = ["sbs", "kbs", "mbc", "jtbc"]
+        document.write(m.toString() + "<br>");
+
+        // 오름차순 + 약순 정령 == 내림차순
+        // m.sort().reverse();
+
+        const n =  m.toSorted();
+        const x = n.toReversed();
+        document.write(m.toString() + "<br>");
+        document.write(n.toString() + "<br>");
+        document.write(x.toString() + "<br>");
+
+    </script>
+</body>
+
+</html>

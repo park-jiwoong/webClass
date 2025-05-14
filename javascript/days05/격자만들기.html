@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>테이블 이동</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+  <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+  <style>
+    span.material-symbols-outlined {
+      vertical-align: text-bottom;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    td {
+      width: 60px;
+      height: 60px;
+      border: 1px solid #999;
+      text-align: center;
+    }
+
+    .active {
+      background-color: #4a90e2;
+      /* 파란색 */
+    }
+
+    .block {
+      background-color: #555;
+      /* 장애물 (검정색) */
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+    <ul>
+      <li><a href="#">로그인</a></li>
+      <li><a href="#">회원가입</a></li>
+    </ul>
+  </header>
+  <div>
+    <xmp class="code">
+    </xmp>
+
+    <h2>테이블 셀 이동하기 + 키이벤트 + 장애물</h2>
+    <p>방향키로 파란색 셀을 이동하세요. 검정색 셀은 이동할 수 없습니다.</p>
+
+    <table id="grid"></table>
+  </div>
+
+  <script>
+    const gridsize = 5;
+    const blocks = [[0, 2], [1, 0], [2, 2], [3, 1], [4, 4]];
+
+    let current = { row: 1, col: 1 }; // 시작 위치 (파란색)
+    const table = document.getElementById('grid');
+
+    // 테이블 생성
+    function drawGrid() {
+      table.innerHTML = '';
+      for (let i = 0; i < gridSize; i++) {
+        const row = document.createElement('tr');
+        for (let j = 0; j < gridSize; j++) {
+          const cell = document.createElement('td');
+          if (current.row === i && current.col === j) {
+            cell.classList.add('active');
+          }
+          if (blocks.some(([r, c]) => r === i && c === j)) {
+            cell.classList.add('block');
+          }
+          row.appendChild(cell);
+        }
+        table.appendChild(row);
+      }
+    }
+
+    function move(dir) {
+      const next = { ...current };
+      if (dir === 'ArrowUp') next.row--;
+      if (dir === 'ArrowDown') next.row++;
+      if (dir === 'ArrowLeft') next.col--;
+      if (dir === 'ArrowRight') next.col++;
+
+      // 범위 및 장애물 체크
+      const isInside = next.row >= 0 && next.row < gridSize && next.col >= 0 && next.col < gridSize;
+      const isBlocked = blocks.some(([r, c]) => r === next.row && c === next.col);
+
+      if (isInside && !isBlocked) {
+        current = next;
+        drawGrid();
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+        e.preventDefault();
+        move(e.key);
+      }
+    });
+
+    drawGrid(); // 초기 그리기
+  </script>
+</body>
+
+</html>

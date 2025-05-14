@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 문자열 메서드</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+ 	span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ 	}  
+	</style>
+</head>
+<body>
+<header>
+    <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+    <ul>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        
+    </ul>
+</header>
+<div>
+    <xmp class="code">
+        [js 문자열 메서드]
+    </xmp>
+
+</div>
+    <script> //쌍따옴표(" ") 홑따옴표(' ') 사용
+        let name = "kim's \"msg\" ";
+        let addr = 'kim"s';
+        //ES^(2016) 추가: 벡틱 연산자 - 여러 줄의 문자열
+        let msg = `
+                hello's
+                "world"
+                ~~
+                `;
+        // 객체 생성자를 사용해서 선언할 수 있다.
+        // let name2 = new String("홍길동"); //기능하지만 권장하지 않는다 X
+        // type object
+
+        // let name2 = "홍길동";   // 권장 O
+        // alert(typeof name2);    // string
+
+        // 특수문자 사용가능 \b \n \r \t 등등
+
+        // 두 문자열을 비교 연산자 : ==     ===
+        //                         !=     !==
+    </script>
+</body>
+
+</html>
