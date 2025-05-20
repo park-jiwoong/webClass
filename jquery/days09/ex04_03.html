@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 5. 20. 오후 3:38:51</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+<style>
+  #panel,   #flip{
+      padding: 5px;
+      font-size: 18x;
+      text-align: center;
+      color:white;
+      background-color: #555;
+      border:1px solid #666;
+      border-radius:3px
+  }
+  #panel{
+     padding: 50px;
+     display: none;  
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code"> 
+    [ 애니메이션 효과 중지 메서드 : stop() ]
+           true/false    true/false
+    stop(  stopAll    ,   goToEnd     )
+             ㄴ 대기열에 남아있는 애니메이션 모두 중지
+             1-[  2   ]-3-4
+             false          ㄴ진행중인 애니메이션 즉시 중지/종료 중지.
+                              false
+      
+  </xmp>
+  
+  <button id="stop">Stop Sliding</button>
+  <div id="flip">Click to Slide Down panel</div>
+  <div id="panel">Hello World</div>   
+      
+</div>
+
+<script>
+  $("#flip").on("click", function (){
+	  // slideDown()메서드는 내부적으로
+	  //    animate() 메서드로 구현이되어져 있다.
+	  $("#panel").slideDown(7000);
+  })
+  
+  $("#stop").on("click", function (){
+	  // $("#panel").stop(false, false); // stopAll false, gotoEnd false
+	  $("#panel").stop(false, true); // stopAll false, gotoEnd true
+  })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

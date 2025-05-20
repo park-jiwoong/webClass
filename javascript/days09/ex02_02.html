@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 5. 20. 오전 10:20:44</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code"> 
+     쿠키 생성
+     쿠키 수정
+     쿠키 삭제
+     쿠키 조회
+     
+     js 쿠키 : document.cookie 속성을 사용(읽기,쓰기)
+  </xmp>
+  쿠키이름 : <input type="text" id="cookieName" autofocus="autofocus"><br>
+  쿠키값 : <input type="text" id="cookieValue"><br>
+  <br>
+  <button onclick="setCookie()">쿠키생성</button>
+  <button onclick="getAllCookies()">쿠키조회</button>
+  <button onclick="getCookie()">쿠키확인</button>
+  <button onclick="delCookie()">쿠키삭제</button>
+  
+  <p id="demo"></p>  
+  
+</div>
+
+<script>
+function setCookie(){
+	let cname = $("#cookieName").val();
+	let cvalue = $("#cookieValue").val();
+	
+	// [기억]
+	// 쿠키값에 한글이 있는 경우에는 %uXXXXX 변환해서 쿠키 저장.
+	// 홍길동 -> %u~
+	//       escape()
+	//       unescape()
+	
+	// 만기날짜   UTC 형식 저장.
+	let now = new Date();
+	now.setDate(  now.getDate() + 10 );
+	let expires = now.toUTCString();
+	
+	// 쿠키 저장
+	document.cookie = `${cname}=${escape(cvalue)}; expires=${expires}; path=/`;
+	
+	$("#cookieName").val("");
+	$("#cookieValue").val("");
+}
+function getAllCookies(){
+	// "name=admin; age=20; bgColor=red"
+	let cookies = document.cookie;
+	$("#demo").html( cookies );
+	
+}
+function getCookie(){
+	// "이름=값;_이름=값;_bgColor=red"
+	let cookies = document.cookie;
+	
+	let cname = $("#cookieName").val();
+	let cvalue; // undefined => false
+	
+	let cookieArr = cookies.split(/;\s/);
+	// console.log( cookieArr );
+	
+	cookieArr.forEach(function (elemt, index, array){
+		let cnvArr = elemt.split("=");
+		if ( cnvArr[0] == cname ) {
+			cvalue = unescape( cnvArr[1] );
+			// break;
+		}
+	});
+	
+	if (cvalue) {
+		$("#cookieValue").val( cvalue );
+	} else {
+        alert("존재하지 않는 쿠키이름이다.");
+	} 
+   	
+}
+function delCookie(){
+	// 1. 만료시점을 과거로 설정해서 다시 쿠키를 
+	//     저장하면 삭제된다.
+	// 2. 만료시점을 설정하지 않으면 브라우저를 
+	//    닫아서 세션이 끊어질 때 자동으로 쿠키는 삭제된다.
+	let cname = $("#cookieName").val();
+
+	let now = new Date();
+	now.setDate(  now.getDate() - 10 );
+	let expires = now.toUTCString();
+	
+	// 쿠키 저장
+	document.cookie = `${cname}=; expires=${expires}; path=/`;
+	
+	$("#cookieName").val("");
+	$("#cookieValue").val("");
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
