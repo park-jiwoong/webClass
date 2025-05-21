@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>필터링</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Welcome to My Homepage</h1>
+    <p>This is a paragraph.</p>
+    <div style="border: 1px solid black;">
+        테스트
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Qui laudantium nobis rerum eum.</p>
+    </div>
+    <br>
+    <p></p>
+    <div style="border: 1px solid black;">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Qui laudantium nobis rerum eum.</p>
+    </div>
+    <br>
+    <div style="border: 1px solid black;">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p class="info">Qui laudantium nobis rerum eum.</p>
+    </div>
+
+    <script>
+        $("div")
+            .css("background-color", "yellow")
+            .first()
+                .css("border", "10px solid red")
+                .css("color", "red")
+            .end()
+            .last()
+                .children("p")
+                    // .filter(".info")
+                    .not(".info")
+                    .css("border", "10px solid blue")
+                    .css("color", "red")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+package org.doit.domain;
+
+@
+public class DeptVO {
+	
+	private int deptno;
+	private int dname;
+	private int loc;
+
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부모 자손 형제</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+
+        .ancestors {
+            display: block;
+            border: 2px solid lightgray;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ancestors">
+        <div style="width: 500px;">div (great-grandparent)
+            <ul>ul (grandparent)
+                <li>li (direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+
+        <div style="width: 500px;">div (great-grandparent)
+            <ul>ul (grandparent)
+                <li>li (direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        /* $("span")
+            // .parent()
+            // .parents()
+            .parentsUntil("div")
+            .css({
+                "color": "red",
+                "border": "2px solid red"
+            }); */
+
+        $("div.ancestors")
+            // .children()
+            // .children("ul") // 선택적으로 자식을 검색.
+            // .find("ul")     // 자식 중에 ul 태그 찾겠다.
+            .find("*")         // 모든 "*" 전부
+            .css({
+                "color": "red",
+                "border": "2px solid red"
+            })
+
+
+    </script>
+</body>
+
+</html>
