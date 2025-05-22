@@ -1,0 +1,38 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/jspPro/images/SiSt.ico">
+<title>부서 선택</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/jspPro/resources/cdn-main/example.css">
+<script src="http://localhost/jspPro/resources/cdn-main/example.js"></script>
+	<style>
+ 	span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ 	}
+	</style>
+</head>
+<body>
+	<h1>부서 선택 후 사원 정보 출력</h1>
+	<form action="test02_02.jsp">부서: </form>
+	<select id="dept" name="dept"> <!-- select 태그 dept는 디자인 줌 옮겨야 할듯... -->
+		<option id="개발부">개발부</option>
+		<option id="영업부">영업부</option> 
+		<option id="총무부">총무부</option>
+	</select>
+	<button type="submit">조회</button>
+<div>
+    <xmp class="code">
+         2) days02.test02.jsp 페이지에
+          <select> 태그에 부서정보를 option 태그로
+          추가하고
+          하나의 부서를 선택하면 선택된 부서로
+          사원의 정보를 출력하는 test02_02 .jsp 페이지에 
+          출력하는 코딩을 하세요 . 
+    </xmp>
+</div>
+</body>
+</html>

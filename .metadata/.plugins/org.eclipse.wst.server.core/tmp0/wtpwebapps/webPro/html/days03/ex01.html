@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+   function hide() {
+      // document.getElementById("아이디명");
+      const teamSpn = document.querySelector("body > span");
+      teamSpn.style.display = "none";
+      
+      event.preventDefault();
+   }
+   function show() {
+      // document.getElementById("아이디명");
+      const teamSpn = document.querySelector("body > span");
+      teamSpn.style.display = "inline-block";
+      
+      event.preventDefault();
+   }
+</script>
+<style>
+a:link{
+     text-decoration: none;
+     color: black;
+     
+     border: solid 1px gray;
+     display: inline-block;
+     width: 100px;
+     text-align: center;
+   }
+   a:visited{
+     color: black;
+   }
+   a:hover{
+     color: red;
+     text-transform: capitalize;
+   }
+   a:active{
+     text-decoration: none;
+   }
+   /* css select */
+   body > span{
+      display: block;
+      border: solid 1px gray;
+      width: 202px;
+   }
+   body > span > span{
+      display: inline-block;
+      /* width: 100px; */
+      width: 50%;
+      color: red;
+      text-align: center;
+   }
+</style>
+</head>
+<body>
+
+<h3>javascript 사용</h3>
+<!-- javascript:void(0) -->
+  <p><a href="" onclick="hide()">숨기기</a><a href="" onclick="show()">보이기</a></p>
+  <span>
+  <span>서재웅</span><span>박지웅</span><span>김예지</span><span>변상호</span><span>김현수</span><span>김민선</span>
+  </span>
+</body>
+</html>

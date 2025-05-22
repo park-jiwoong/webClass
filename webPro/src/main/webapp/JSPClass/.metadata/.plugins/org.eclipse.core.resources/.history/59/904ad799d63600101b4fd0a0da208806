@@ -1,0 +1,30 @@
+package das02;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+// 서블릿 클래스
+public class Now extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		super.doGet(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		super.doPost(req, resp);
+	}
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+		//super.service(req, resp);
+		// jsp 페이지: JspWriter type -> out 객체, <%= %> 출력
+		PrintWirter = response.getWriter();
+	}
+
+}

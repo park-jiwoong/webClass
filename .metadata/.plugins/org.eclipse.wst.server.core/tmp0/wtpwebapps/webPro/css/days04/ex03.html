@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사 막대그래프 (랜덤)</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* border: 1px solid red; */
+            /* 확인용 보더는 제거 */
+            padding: 20px;
+            font-family: Arial;
+            margin: 0 auto;
+            max-width: 800px;
+            /* height: 100%; */
+            /* 불필요할 수 있음 */
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* 막대그래프 그리기 */
+        .row .side {
+            float: left;
+            width: 15%;
+            margin-top: 10px;
+            padding-right: 10px;
+            /* 레이블과 그래프 간격 */
+        }
+
+        .row .middle {
+            float: left;
+            width: 70%;
+            margin-top: 10px;
+        }
+
+        .row .middle .bar-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: left;
+            /* 텍스트를 왼쪽에 표시 */
+            color: white;
+            border-radius: 5px;
+            /* 약간 둥글게 */
+            overflow: hidden;
+            /* 내부 요소가 밖으로 나가지 않도록 */
+        }
+
+        .row .right {
+            text-align: right;
+            width: 15%;
+            /* side와 동일하게 */
+            float: left;
+            /* left로 변경하여 정렬 */
+            margin-top: 10px;
+            /* 다른 요소와 맞춤 */
+            padding-left: 10px;
+            /* 숫자와 그래프 간격 */
+        }
+
+        /* 기본 바 스타일 - 높이만 지정 */
+        .row .middle .bar-container>div {
+            height: 18px;
+            line-height: 18px;
+            /* 텍스트 수직 중앙 정렬 */
+            color: black;
+            /* 바 내부 텍스트 색상 */
+            padding-left: 5px;
+            /* 바 내부 텍스트 여백 */
+            text-align: right;
+            /* 바 내부 텍스트 오른쪽 정렬 */
+            padding-right: 5px;
+            /* 바 내부 텍스트 오른쪽 여백 */
+            white-space: nowrap;
+            /* 텍스트 줄바꿈 방지 */
+        }
+
+        /* 각 바의 배경색 */
+        .row .bar-container .bar-1 {
+            background-color: #f44336;
+        }
+
+        /* Red */
+        .row .bar-container .bar-2 {
+            background-color: #4CAF50;
+        }
+
+        /* Green */
+        .row .bar-container .bar-3 {
+            background-color: #2196F3;
+        }
+
+        /* Blue */
+        .row .bar-container .bar-4 {
+            background-color: #ffeb3b;
+            color: #333;
+        }
+
+        /* Yellow - 글자색 조정 */
+
+        /* CSS 오류 수정: width 값에 단위(%) 추가 */
+        /* 초기 값은 JS가 덮어쓰므로 꼭 필요하진 않지만, CSS 자체의 정확성을 위해 수정 */
+        /* .row .bar-container .bar-1 { width: 20%; } */
+        /* .row .bar-container .bar-2 { width: 80%; } */
+        /* 이 값은 80 이 아니라 80% 여야 함 */
+        /* .row .bar-container .bar-3 { width: 15%; } */
+        /* .row .bar-container .bar-4 { width: 55%; } */
+        /* => 어차피 JS로 동적 할당하므로 초기 width는 제거해도 무방 */
+    </style>
+
+</head>
+
+<body>
+    <h3>설문조사 - 막대그래프 (랜덤 값)</h3>
+
+    <div class="row">
+        <div class="side">
+            <div>1 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+                <div class="bar-1"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>0</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="side">
+            <div>2 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+                <div class="bar-2"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>0</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="side">
+            <div>3 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+                <div class="bar-3"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>0</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="side">
+            <div>4 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+                <div class="bar-4"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>0</div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript (Vanilla JS) - 참고용 (아래 jQuery 사용)
+/*
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('.row');
+
+            // 모든 막대그래프 그리기..
+            let min = 0, max = 100;
+            for (var i = 2; i <= 5 ; i++) {
+                let n = Math.floor(Math.random() * (max - min + 1)) + min;
+                
+                const rightDiv = document.querySelector(`body > div:nth-child(${i}) > div.side.right > div`);
+                rightDiv.innerText = n;
+                
+                const barDiv = document.querySelector(`body > div:nth-child(${i}) > div.middle > div > div`);
+                barDiv.style.width = `${n}%`;
+            } // for
+            rows.forEach(function(row) {
+                // 0부터 100까지의 랜덤 정수 생성
+                let randomValue = Math.floor(Math.random() * 101); // 0 ~ 100
+
+                // 해당 행의 바 요소 찾기 (bar-container 바로 아래 div)
+                let barElement = row.querySelector('.middle .bar-container > div');
+                // 해당 행의 값 표시 요소 찾기 (side right 아래 div)
+                let valueElement = row.querySelector('.side.right > div');
+
+                if (barElement && valueElement) {
+                    // 바 너비 설정 (백분율)
+                    barElement.style.width = randomValue + '%';
+                    // 바 안에 값 텍스트 표시 (선택 사항)
+                    // barElement.textContent = randomValue + '%';
+                    // 오른쪽 값 텍스트 설정
+                    valueElement.textContent = randomValue;
+                }
+            });
+        });
+*/
+    </script>
+
+    <script>
+        // jQuery 사용: 막대그래프의 값을 임의의 값으로 처리
+        $(document).ready(function () { // HTML 문서가 모두 로드되면 실행
+
+            // 모든 '.row' 요소를 순회
+            $('.row').each(function () {
+                // 현재 순회 중인 '.row' 요소 (this)
+                let $currentRow = $(this);
+
+                // 0부터 100까지의 랜덤 정수 생성 (백분율로 사용하기 좋음)
+                let randomPercent = Math.floor(Math.random() * 101); // 0 ~ 100
+
+                // 현재 행('.row') 내부에서 필요한 요소 찾기
+                let $barElement = $currentRow.find('.middle .bar-container > div'); // 바(bar-1, bar-2 등)
+                let $valueDisplay = $currentRow.find('.side.right > div');     // 숫자 표시 영역
+
+                // 찾은 요소들에 랜덤 값 적용
+                if ($barElement.length && $valueDisplay.length) { // 요소가 존재하는지 확인
+                    // 1. 바(bar) 요소의 너비를 랜덤 퍼센트로 설정
+                    $barElement.css('width', randomPercent + '%');
+
+                    // 2. 오른쪽에 있는 숫자 표시 영역의 텍스트를 랜덤 값으로 설정
+                    $valueDisplay.text(randomPercent);
+
+                    // 3. (선택 사항) 바 내부에도 퍼센트 값을 표시하고 싶다면:
+                    // $barElement.text(randomPercent + '%');
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

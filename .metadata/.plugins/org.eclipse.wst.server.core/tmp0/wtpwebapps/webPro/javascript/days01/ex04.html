@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름 입력 (노란색 바탕에 빨간글씨 추가)</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        select#nameList option:checked {
+            background-color: yellow;
+            color: red;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+        </ul>
+    </header>
+
+    <xmp class="code">
+
+    </xmp>
+
+    <div>
+        <label for="txtName">이름 입력 :</label>
+        <input type="text" id="txtName" placeholder="이름을 입력하세요">
+        <button id="btnAddName">추가</button>
+
+        <br><br> <select id="nameList" size="5"> </select>
+    </div>
+
+
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const txtName = document.getElementById("txtName");
+            const btnAddName = document.getElementById("btnAddName");
+            const nameListSelect = document.getElementById("nameList");
+        
+            function addNameToList() {
+                const nameValue = txtName.value.trim();  /* enter 키보드 사용가능하게 */
+                
+                if(nameValue === ""){
+                    alert("이름을 입력해주세요.");
+                    txtName.focus();
+                    return;
+                }
+
+                let exists = false;
+                for (let i = 0; i < nameListSelect.options.length; i++) {
+                    if (nameListSelect.options[i].value === nameValue) {
+                        exists = true;
+                        break;
+                    }
+                }
+
+                if(exists){
+                    alert("이미 목록에 있는 이름입니다.");
+                    txtName.select();
+                }
+
+                const newOption = document.createElement("option");
+                newOption.value = nameValue;
+                newOption.textContent = nameValue;
+                nameListSelect.appendChild(newOption);
+
+                txtName.value="";
+                txtName.focus();
+            }
+            
+            nameListSelect.addEventListener("change", function(){
+                if(this.selectedIndex !== -1){
+                    txtName.value = this.options[this.selectedIndex].value;
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

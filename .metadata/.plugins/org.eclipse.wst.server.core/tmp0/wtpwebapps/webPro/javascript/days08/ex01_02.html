@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역변수 연습</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+            {※ 클로져는 면접 기술 지문으로 많이 나옴 이것도 암기해두거나 이해두면 좋음 ※}
+            함수 내부에서 선언된 함수가, 외부 함수의 변수에 접근할 수 있는 기능
+        </xmp>
+
+        <button>count!!!</button>
+        <p id="demo"></p>
+        <script>
+            // let counter = 0; // 전역변수
+
+            // function add () {
+            //     counter += 1;
+            // }
+
+            // add(); // 1
+            // add(); // 2
+            // add(); // 3
+
+            // $("#demo").html(counter);
+        </script>
+
+        <script>
+            // let counter = 0; // 전역변수 (글로벌 범위)
+
+            // // add(); 함수 선언
+            // function add() {
+            //     counter += 1;
+            // }
+
+            // $("button").on("click", function () {
+            //     // add(); 호출 1증가
+            //     // 굳이 add() 함수 호출 하지 않아도 됨 X, 전역변수 counter
+            //     // 반드시 add() 함수를 호출해야만 counter 값을 1증가 시키는 작업을 하고 싶다
+            //     counter++;
+            //     $("#demo").html(counter);
+            // });
+        </script>
+
+        <script>
+            function add() {
+                // 지역 변수 -> (함수 범위에서만 사용할 수 있게) + 전역변수
+                let counter = 0;
+                counter += 1;
+                return counter;
+            }
+
+            $("button").on("click", function () {
+                $("#demo").html(add()); // 1
+            });
+        </script>
+
+    </div>
+
+</body>
+
+</html>

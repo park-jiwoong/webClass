@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+        </xmp>
+
+        <h2>js HTML DOM</h2> <!-- 여기 사이가 빈 노드로 잡힘 -->
+        <p>Displaying document.body</p>
+
+        <p id="demo" style="border: 1px solid gray;">demo</p>
+    </div>
+
+    <script>
+        let nodeList = document.getElementBy("h2");
+        // console.log(nodeList[0].innerHTML);
+
+        document.querySelector("h2").parentElement()
+            // .lastElementChild() p태그
+            .childNodes;
+
+        alert(divChilds.length);
+    </script>
+
+5525
+    <script>
+        // [object HTMLHeadingElement]
+        // let element = document.querySelector("h2");
+        // let pdemo = element.nextElementSibling.nextElementSibling;
+        // alert(element);
+        // alert(element.nextSibling); //[object Text]
+        // alert(element.nextSibling.nodeValue); null
+        // alert(element.nextSibling.nodeName); //#text
+        // alert(element.nextSibling.nodeType); //[object Text] -> 3 텍스트 노드라는 뜻
+
+    </script>
+</body>
+
+</html>

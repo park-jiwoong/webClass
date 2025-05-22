@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>CSS 2D / 3D 변환: 마우스 올리면</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.2/jquery.min.js"></script>
+    <style>
+        #rotate2D, #rotate3D{
+            width: 80px;
+            height: 70px;
+
+            color: white;
+
+            font-weight: bold;
+            font-size: 15px;
+            padding: 10px;
+
+            margin-right: 50px;
+            border-radius: 5px;
+            border: 1px solid #000;
+            background-color: red;
+            margin: 10px;
+
+            float: left;
+
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+   <!-- CSS 2D / 3D 변환: 마우스 올리면 -->
+    <div style="height: 80px;">
+        <div id="rotate2D" onmouseover="rotate2d()">rotate2D</div>
+        <div id="rotate3D" onmouseover="rotate3d()">rotate3D</div>
+    </div>
+    <!-- div[style]>#rotate$@2D[onmouseover='rotate$d()']*2>{rotated$@2D} -->
+    
+
+    <script>
+        var angle2d = 0, angle3d = 0;
+        var timer2d, timer3d;
+
+        const target2d = document.querySelector("#rotate2D");
+        const target3d = document.querySelector("#rotate3D");
+        
+        function rotate2d(){
+
+            clearInterval(timer2d); //이전 작업은 멈추게 하기
+
+            timer2d = setInterval(() => {
+                target2d.style.transform = `rotate(${angle2d++}deg)`;
+
+                if( angle2d == 180 || angle2d == 360){
+                    clearInterval(timer2d);
+                        if(angle2d == 360) angle2d = 0;
+                }
+
+            }, 10); // 0.01초
+        }
+
+        function rotate3d(){
+
+            clearInterval(timer3d); // 마찬가지로...
+
+            timer3d = setInterval(() => {
+                target3d.style.transform = `rotateX(${angle3d++}deg)`
+            },10); // 0.01초
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <!--
+    ★ 그리기 위한 컨테이너 ★
+        [html 그래픽] 작업을 할때 들어가는 요소 - canvas, svg
+            ㄴ canvas 요소: js를 사용해서 그래픽 처리를 하는데 사용되는 태그
+                ㄴ 그래픽 컨테이너 역활 (도화지)
+                ㄴ 모든 브라우저에서 지원
+                ㄴ 그리기 작업은 js를 사용한다.
+                ㄴ 선, 원, 사각형, 텍스트, 이미지 etc...
+    -->
+    <canvas id="myCanvas" width="200" height="200" style="border: 1px solid #000;"></canvas>
+
+    <script>
+        //js 모든 그림은 자바 스크립트로 그림
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        // 선 - 두 점
+        ctx.moveTo(0,0);
+        ctx.lineTo(200,100);
+        ctx.stroke();
+
+        // 원(호)
+        ctx.beginPath();
+        ctx.arc(95, 50 ,40, 0, 0.5*Math.PI);
+        ctx.stroke();
+
+        // 텍스트
+        ctx.font = "30px Arial";
+        ctx.strokeText("Hello World", 10, 50);
+    </script>
+</body>
+</html>

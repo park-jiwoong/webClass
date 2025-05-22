@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진행중이던 입력 이벤트 창</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined{
+           vertical-align: text-bottom;
+        }  
+       </style>
+    <style>
+        /* .red-text {
+            color: red;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+        </xmp>
+
+        <input type="text" id="txtContent" class="long" placeholder="내용 입력" autofocus="autofocus">
+
+        <button class="add">실행(execute)</button>
+
+        <div id="demo" class="code">결과: </div>
+
+    </div>
+
+    <script>
+        // function printInput(){
+        //     const input = document.getElementById("txtContent").value;
+        //     const result = document.getElementById("demo");
+        //     result.textContent = "결과:" + input;
+        // }
+
+        // const, let, var 키워드 - 변수 선언
+        const btnExec = document.querySelector("button.add");
+        const txtContent = document.querySelector("#txtContent");
+        const demo = document.querySelector("#demo");
+
+
+        // btnExec.addEventListener("click", function(){});
+        btnExec.onclick = function () {
+            // alert("이벤트 확인")
+            let content = txtContent.value;
+            // alert(content);
+            // demo.innerText = content;
+            demo.innerText = `결과: ${content}`;
+            // demo.innerText = `결과 : <span style='color:red'>${content}</span>` ; 빨강색을 입력 받은 값만 출력 시키는 코딩
+            demo.innerHTML = `결과 : <span style='color:red'><b>${content}</b></span>`;
+
+            // demo.classList.add("red-text"); head 태그의 style을 줘서 지정해서 사용할 수도 있음
+            // demo.style.color = "red";       1회성으로 바로 입력해서 사용할 수도 있음
+            // 다시 입력받을  수 있도록 초기화 코딩
+            // txtContent.value = "";
+            // txtContent.focus();
+            txtContent.select();
+        }// onclick
+
+    </script>
+</body>
+
+</html>

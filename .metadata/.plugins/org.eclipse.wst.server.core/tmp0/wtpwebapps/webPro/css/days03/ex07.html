@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #1f1f1f;
+            height: 100vh; /* viewport를 사용해서 100로 잡겠다*/
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator{
+            border: 1px solid #333;
+            background-color: #ccc;
+            padding: 5px;
+            width: 287px;
+        }
+
+        .calculator>form{
+            display: grid;
+            
+            /* grid-template-columns: 65px 65px 65px 65px; */
+            grid-template-columns: repeat(4, 65px); /* 열과 행을 정의 */
+            grid-auto-rows: 65px;
+            grid-gap: 5px; /* 버튼간의 거리 */
+        }
+
+        .calculator>form input{
+            border: 2px solid #333;
+            cursor: pointer;
+            font-size: 19px;
+        }
+
+        .calculator>form input:hover{
+        /* 텍스트 그림자 효과 */
+        /* 상자 그림자 */
+            box-shadow: 1px 1px 2px #333;
+        }
+
+        .calculator>form input[name="output"]{
+            /*
+            grid-column-start: 1;
+            grid-column-end: 5;
+            */
+
+            /*
+            grid-column-start: 1;
+            grid-column-end: -1;
+            */
+
+            /*
+            grid-column: 1/5;
+            */
+
+            /*
+            grid-column: 1/ span 4;
+            */
+
+            grid-column: span 4;
+
+            text-align: right;
+            padding: 0 10px;
+        }
+
+        .calculator>form .clear{
+            grid-column: 1/ span 3;
+            background-color: #ed4848;
+        }
+
+        .calculator>form .result{
+            grid-column: span 2;
+        }
+
+        .calculator>form .operator{
+            background-color: orange;
+        }
+
+        .calculator>form .dot{
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <form action="" name="forms">
+            <input type="text" name="output" value="0" readonly>
+            <input type="button" value="C" class="clear">
+            <input type="button" value="/" class="operator">
+            <input type="button" value="1">
+            <input type="button" value="2">
+            <input type="button" value="3">
+            <input type="button" value="*" class="operator">
+            <input type="button" value="4">
+            <input type="button" value="5">
+            <input type="button" value="6">
+            <input type="button" value="+" class="operator">
+            <input type="button" value="7">
+            <input type="button" value="8">
+            <input type="button" value="9">
+            <input type="button" value="-" class="operator">
+            <input type="button" value="." class="dot">
+            <input type="button" value="0">
+            <input type="button" value="=" class="operator result">
+        </form>
+    </div>
+
+    <script> /* (암기 시험 계산기 구현) */
+        //input[type=button] JQuery selector
+        $(":button").on("click", function(){
+            input[type=text]
+            $(":text").val($(this).val());
+        });
+    </script>
+</body>
+
+</html>

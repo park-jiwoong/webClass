@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript의 중첩함수의 이해</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+            [javascript의 중첩함수의 이해]
+            1. 중첩함수 ? 함수 안에 선언 된 함수
+        </xmp>
+
+        <button>count!!!</button>
+        <p id="demo"></p>
+
+        <script>
+            // function add() {
+            //     let counter = 0;
+            //     // counter+=1; --> plus() 처리 패턴 제작
+            //     // 중첩 함수
+            //     function plus() { // 함수 안에 선언된 함수
+            //         // 부모 함수의 지역변수에 접근 가능
+            //         counter += 1;
+            //     }
+            //     plus();
+            //     return counter;
+            // }
+
+            //  $("button").on("click", function () {
+            //     $("#demo").html(add()); // 1
+            //  });
+        </script>
+
+        <script>
+            // let counter = 0; // 전역변수
+            // let plus = function (){
+            //     counter += 1;
+            //     return counter;
+            // }
+
+            // plus();
+            // plus();
+            // plus();
+
+            // alert(counter);
+        </script>
+
+        <script>
+            // (function(){
+            //     alert("호출됨...")
+            // })();
+        </script>
+
+        <script>
+            // 자체 호출 함수
+            let plus = (function () {
+                let counter = 0; // 지역변수 + 전역변수(외부에서 counter 사용 X)
+                return function () {
+                    // 중첩함수
+                    counter++;
+                    return counter;
+                };
+            })();
+
+            $("button").on("click", function () {
+                $("#demo").html(plus()); // 1
+            });
+        </script>
+    </div>
+
+</body>
+
+</html>

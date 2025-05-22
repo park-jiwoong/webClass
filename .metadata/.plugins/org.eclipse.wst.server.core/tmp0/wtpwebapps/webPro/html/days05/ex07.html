@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert title here</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <form action="">
+        <div>
+            설문조사시작일: <input type="date" id="survey_start" value="2025-04-01"><br>
+            설문조사종료일: <input type="date" id="survey_end" value="2025-04-16"><br>
+            <input type="button" id="btnSurvey" value="설문조사 확인" onclick="test01(this)">
+            <div>x</div>
+            <script>
+                function test01(btn){
+                    let s_start = document.querySelector("#survey_start").value;
+                    let s_end = document.querySelector("#survey_end").value;
+                    
+                    alert(btn.nextElementSibling);
+
+                    btn.nextElementSibling.innerText = s_start;
+
+                /*  alert (this) <- window 객체
+                    this.nextElementSibling().innerText = s_start;
+                    if(this.nextElementSibling != null){
+                    this.nextElementSibling.innerText = s_start;
+                }else{
+                    alert('다음 형제 요소가 없읍니다.');
+                }
+                */    
+            }
+            </script>
+        </div>
+
+        <p>
+            색상: <input type="color" id="color">
+            <br>
+            <input type="button" id="btnColor" value="색 확인">
+            <div id="demo"></div>
+        </p>
+    
+        <p>하고 싶은 말</p>
+        <textarea rows="10" cols="30">입력</textarea>
+
+        <p>
+            <!-- select>option*5>{옵션$} -->
+            <select name="" id="" size="5" multiple="multiple">
+                <option value="옵션1" selected="selected">옵션1</option>
+                <option selected="selected">옵션2</option>
+                <option>옵션3</option>
+                <option selected="selected">옵션4</option>
+                <option>옵션5</option>
+            </select>
+          </p>
+    </form>
+    <script>
+        /* JSP
+        const btnColor = document.getElementById("btnColor");
+        btnColor.addEventListener("click", function(){
+            // alert("이벤트 확인");
+            let color = document.querySelector("#color").value;
+            document.querySelector("#demo").innerText = color;
+            document.querySelector("#demo").style.color = color;
+            document.querySelector("#demo").style.fontSize = "20px";
+        };
+        */
+
+        //JQuery - val()
+        $("#btnColor").on("click", function(){
+            let color = $("#color").val()
+            $("#demo")
+            .text(color)
+            .css({
+                "color":color,
+                "fontSize":"30px",
+                "border":"solid 2px red"
+            });
+            // .css("color", color)
+            // .css("fontSize", "30px");
+        });
+
+    </script>
+
+</body>
+
+</html>

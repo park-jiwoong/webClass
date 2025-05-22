@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 5. 21. 오전 9:51:45</title>
+<link rel="shortcut icon" type="image/x-icon" href="/jspPro/images/SiSt.ico">
+<link rel="stylesheet" href="/jspPro/resources/cdn-main/example.css">
+<script src="/jspPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }   
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jioowng</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code"> 
+   
+  </xmp>
+	<a href="/foo/bar/sub/ex01.jsp">/foo/bar/sub/ex01.jsp</a>
+	<a href="/foo/bar/ex01.html">/foo/bar/ex01.html</a><br>
+	<a href="/foo/bar/now">/foo/bar/now</a><br>
+</div>
+</body>
+</html>

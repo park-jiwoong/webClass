@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+        </xmp>
+        <!-- 동적으로 요소를 생성 + 이벤트 처리
+    <button>Turn on</button>
+    <button>Turn off</button>
+    <br>
+    <img src="../images/pic_bulboff.gif" alt=""> -->
+
+
+        <!-- <img src="../images/pic_bulbon.gif" alt=""> -->
+        <script>
+            const container = document.querySelector("body>div");
+
+            // <button>Turn on</button>
+            const btnTurnOn = document.createElement("button"); // <button></button> 만들어짐
+            btnTurnOn.innerText = "Turn on"; // <button> Turn on </button> 글자 들어가짐
+            btnTurnOn.addEventListener("click", function () {
+                bulb_onoff(true);
+            });
+            container.appendChild(btnTurnOn);
+
+            // <button>Turn off</button>
+            const btnTurnOff = document.createElement("button"); // <button></button> 만들어짐
+            btnTurnOff.innerText = "Turn off";
+            btnTurnOff.style.display = "none";
+            btnTurnOff.addEventListener("click", function () {
+                bulb_onoff(false);
+
+            });
+
+            container.appendChild(btnTurnOff);
+            // <br> 빈 요소
+            const br = document.createElement("br"); // <button></button> 만들어짐
+            container.appendChild(br);
+            // imgBulb.src = "../images/pic_bulbon.gif"
+            const imgBulb = document.createElement("img");
+            imgBulb.src = "../images/pic_bulboff.gif";
+            imgBulb.setAttribute("alt", "");
+            container.appendChild(imgBulb);
+
+            function bulb_onoff(flag){
+                // [js 삼항연산자 존재 0   ?:]
+                // imgBulb.src = document.createElement("img");
+                imgBulb.setAttribute("src", `../images/pic_bulb${flag?"on":"off"}.gif`);
+
+                btnTurnOff.style.display = flag? "inline":"none";
+                btnTurnOn.style.display = flag? "none":"inline";
+            }
+        </script>
+
+    </div>
+
+    <body>
+
+</html>

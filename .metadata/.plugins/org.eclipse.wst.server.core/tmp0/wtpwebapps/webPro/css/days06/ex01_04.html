@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[CSS 변수 변수값을 얻어오기 - 설정하기]</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        /* 전역변수 선언 root */
+        :root {
+            --blue: #1e90ff;
+            --white: #fff;
+        }
+
+        body {
+            background-color: var(--blue);
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--blue);
+        }
+
+        .container {
+            /* css 지역변수 선언 */
+            --fontsize: 25px
+        }
+
+        /* css selector (선택자)*/
+        .container {
+            /* 1. 전역변수 --blue => 지역변수로 재정의할 수 있다. */
+            --blue: #1e90ff;
+            /* 2. 새로운 지역변수만 선언 */
+            --button-blue: #0000ff;
+
+            color: var(--button-blue);
+            background-color: var(--button-blue);
+            padding: 15px;
+
+            font-size: var(--fontsize);
+        }
+
+        button {
+            background-color: var(--white);
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            padding: 5px;
+        }
+    </style>
+
+    <style>
+        /* 미디어쿼리는 여러 장치에 맞게 다양한 스타일을 적용하기 위해서 사용하는 규칙을 정의한 것. */
+        @media screen and (min-width:450px) {
+            .container {
+                --fontsize: 50px; /* css 지역변수 변경 (25px → 50px) */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The Traditional Way</h1>
+
+    <div class="container">
+        <h2>Lorem, ipsum.</h2>
+
+        <p>Lorem ipsum, dolor sit amet consectetur</p>
+        <p>adipisicing. Mollitia iste a vero aspernatur,</p>
+        <p>
+            <button onclick="getFunc();">CSS 변수값을 얻어오기</button>
+            <button onclick="setFunc();">CSS 변수값을 설정하기</button>
+        </p>
+
+        <script>
+            var r = document.querySelector(":root");
+
+            function getFunc() {
+                // 읽어온 root 로 부터 스타일지정 (속성: 속성값)을 얻어오는 함수
+                var rs = getComputedStyle(r); /* root의 스타일 값을 가져옴*/
+                var color = rs.getPropertyValue("--blue");
+                alert(color);
+            };
+
+            function setFunc() {
+                r.style.setProperty("--blue", "red");
+            };
+        </script>
+    </div>
+
+    <body>
+
+</html>

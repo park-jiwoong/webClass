@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[CSS Overflow]</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div{
+            background-color: coral;
+            border: 1px solid;
+            /* overflow: visible; */
+            /* overflow: hidden; */
+
+            /* overflow: scroll; */
+            /* overflow: auto; */
+
+            overflow-x: hidden;
+            overflow-y: scroll;
+
+            width: 300px;
+            height: 65px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        [CSS Overflow]
+            ㄴ 영역의 contant(내용)이 맞지 않는 경우 or (넘치는 경우)
+        1. visible: ( 기본값 ) 잘리지 않는다.
+                영역 밖에 넘쳐서 랜더링 된다.
+        2. hidden: 잘린다. 보여지지 않는다.
+        3. scroll: 질린다. 스크롤바가 추가
+        4. auto:    scroll 속성과 동일
+                차이점: 필요할 때만 스크롤바가 생성
+        높이가 지정된 block모드인 요소애만 Overflow 속성 적용가능
+    -->
+    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores tempora laboriosam accusamus. Fugit
+        accusantium nesciunt quidem vel atque enim reprehenderit, nobis, voluptatem corrupti explicabo ratione veritatis
+        cum id, autem distinctio?</div>
+        <br>
+    <div>Lorem ipsum dolor sit amet.</div>
+</body>
+
+</html>

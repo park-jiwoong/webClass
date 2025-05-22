@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[요소 수직/수평 정렬]</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        center{ text-align: center;}
+        /* img 요소는 인라인 모드 */
+        img{ /* 가운데 옮기는 방법 */
+            display: block;
+            margin: 0 auto;
+        }
+
+        .right{
+            width: 300px;
+            border: 3px solid #73ad21;
+            position: absolute; /* 이게 기준이 됨 */
+            right: 0;
+            bottom: 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!--
+        [요소 수직/수평 정렬]
+        1. 블럭모드 요소: 수평 가운데 정렬
+            margin:0 auto
+        2. 요소 안에 텍스트를 가운데 정렬
+            text-align: center;
+        3. 
+    -->
+    <div class="center"> <!-- block 모드-->
+        <p>Hello World!</p> <!-- block 모드-->
+    </div>
+    <br>
+    <img src="../images/paris.jpg" style="width: 40%;" alt="">
+    <br>
+    <div class="right">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Eum nemo excepturi nulla sequi rem vero, unde molestias eaque,
+        quod reiciendis quasi tempora, fugiat doloremque tempore eos sit eligendi omnis dolore?</div>
+</body>
+
+</html>

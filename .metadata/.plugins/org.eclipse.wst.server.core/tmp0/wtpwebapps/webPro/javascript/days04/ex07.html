@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+
+        tbody>tr>td:first-child {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+        </xmp>
+
+        <!-- table#tblDept>(thead>tr>th*3>lorem1)+(tbody>tr*4>td*3>lorem1)+(tfoot>tr>td[colspan=3]>button) -->
+        <table id="tblDept">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" class="all">모두 선택</th>
+                    <th>이름</th>
+                    <th>지역</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" id="ck1"></td>
+                    <td>Sapiente.</td>
+                    <td>Suscipit?</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="ck2"></td>
+                    <td>Perferendis.</td>
+                    <td>Voluptas.</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="ck3"></td>
+                    <td>Voluptate.</td>
+                    <td>Ipsa.</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="ck4"></td>
+                    <td>Repellat.</td>
+                    <td>Impedit.</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" align="center"><button>선택 확인</button></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <p id="demo"></p>
+    </div>
+    <script>
+        //js
+        const ckbAll = document.querySelector(".all"); // "모두 선택" 체크박스
+        const chks = document.querySelectorAll("tbody td input[type=checkbox]") // 4개 항목 체크박스
+        const demo = document.getElementById("demo");
+        const button = document.querySelector("tfoot button");
+
+        ckbAll.addEventListener("change", function () {
+            chks.forEach(cb => {
+                cb.checked = this.checked; // 전체 체크 or 해제
+            });
+        });
+
+        chks.forEach(cb => {
+            cb.addEventListener("change", function () {
+                // 모든 항목이 체크되어야만 "모두 선택"도 체크됨
+                const allChecked = Array.from(chks).every(cb => cb.checked);
+                ckbAll.checked = allChecked;
+            });
+        });
+
+        button.addEventListener("click", function () {
+            let result = "";
+
+            Array.from(chks).forEach(cb => {
+                if (cd.checked) {
+                    const tr = cb.closest("tr");
+                    const name = tr.children[1].textContent;
+                    const location = tr.children[2].textContent;
+                    result += `✔ ${cb.id} / 이름: ${name} / 지역: ${location}<br>`;
+                }
+            });
+            demo.innerHTML = result || "선택된 항목이 없습니다.";
+        });
+    </script>
+
+    <script> // 2번 째 td를 찾고 싶다 (확인해 보기)
+        // for (var i = 0; i < ckbs.length; i++) {
+        //     const ckb = ckbs[i];
+        //     const cktr = document.querySelector(`#tblDept > tbody > tr:nth-of-type(${i + 1})`);
+        //     const name = cktr.children[1].textContent;
+        //     const area = cktr.children[2].textContent;
+        //     if (ckb.checked) {
+        //         content += `<li>${ckb.id} / 이름: ${name} / 지역: ${area}</li>`;
+        //     } // if
+        // } // for
+        // content += "</ul>";
+    </script>
+</body>
+
+</html>

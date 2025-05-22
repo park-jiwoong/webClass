@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.0">
+    <title>[js 날짜]</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7./jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+
+        .container {
+            width: 500px;
+        }
+
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            padding-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+        </xmp>
+        <div class="container">
+
+            <button class="collapsible">Section 1</button>
+            <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iure aliquam soluta
+                minima impedit ratione laboriosam autem omnis. Doloribus eius incidunt totam iure deleniti a officia
+                blanditiis rem recusandae officiis.</div>
+
+            <button class="collapsible">Section 2</button>
+            <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iure aliquam soluta minima impedit
+                ratione laboriosam autem omnis. Doloribus eius incidunt totam iure deleniti a officia blanditiis rem
+                recusandae officiis.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iure aliquam soluta minima impedit
+                ratione laboriosam autem omnis. Doloribus eius incidunt totam iure deleniti a officia blanditiis rem
+                recusandae officiis.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iure aliquam soluta minima impedit
+                ratione laboriosam autem omnis. Doloribus eius incidunt totam iure deleniti a officia blanditiis rem
+                recusandae officiis.
+            </div>
+
+            <button class="collapsible">Section 3</button>
+            <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iure aliquam soluta
+                minima impedit ratione laboriosam autem omnis. Doloribus eius incidunt totam iure deleniti a officia
+                blanditiis rem recusandae officiis.</div>
+
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

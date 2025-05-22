@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert title here</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <!-- jquery 구글 CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <!-- 부트스트램 CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- 구글 아이콘 CDN -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .icon-bar {
+            background-color: #555;
+            width: 90px;
+
+            position: relative; /* 상대 좌표로 설정: 기준점을 알아야 위치를 찍을 수 있음 */
+            /* right: -80px; */
+            left: -80px;
+        }
+
+        .icon-bar>a {
+            color: wheat;
+            font-size: 36px;
+            text-align: center; /* 아이콘 가운데 정렬 */
+
+            padding:  16px;
+            display: block;
+        }
+
+        .icon-bar>a:hover{
+            background-color: #000;
+        }
+
+
+        .icon-bar>a.active{
+            background-color: #4caf50;
+        }
+	
+    </style>
+</head>
+
+<body>
+    <div class="icon-bar">
+        <a href="#" class="active"><i class="fa fa-home"></i></a>
+        <a href="#"><i class="fa fa-search"></i></a>
+        <a href="#"><i class="fa fa-envelope"></i></a>
+        <a href="#"><i class="fa fa-globe"></i></a>
+        <a href="#"><i class="fa fa-trash"></i></a>
+    </div>
+</body>
+
+</html>

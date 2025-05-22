@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025. 5. 20. 오전 11:17:14</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+  <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+  <script src="cookie.js"></script>
+  <style>
+    span.material-symbols-outlined {
+      vertical-align: text-bottom;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+    <ul>
+      <li><a href="#">로그인</a></li>
+      <li><a href="#">회원가입</a></li>
+    </ul>
+  </header>
+  <div>
+    <xmp class="code">
+    </xmp>
+
+    <div id="clickme">
+      click here
+    </div>
+
+    <img src="https://api.jquery.com/resources/0042_06_05.png" alt="" id="book" style="width: 100px;height: 123px;">
+  </div>
+
+  <script>
+    $("clickme").on("click", function () {
+      // $("book").hide();
+      // $("book").hide(400);
+      // $("book").hide(5000);
+      // $("#book").hide("slow"); // 600 fast 200
+
+      // 완전히 숨겨진 후에 test() 호출
+      // $("#book").hide(5000);
+      // test();
+      //                   콜백함수
+      // $("#book").hide(5000, test);
+      $("#book").toggle(500); //show() /hide()
+
+    });
+
+    function test() {
+      alert("ㅁㅁ");
+    }
+    
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>투명도 속성</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        div {
+            /*1점*/
+            border: 1px solid gray;
+            width: 200px;
+            padding: 10px;
+
+            background-color: rgba(0, 255, 0, 0.1);
+        }
+
+        div.first {
+            /* 1점 + 10점 */
+            /* 투명도 속성 0 ~ 1 */
+            /*★ (암기) 차이점: 자식 요소도 동일한 투명도를 상속받는다. ★*/
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div*5>lorem5 -->
+    <div class="first">Lorem ipsum dolor sit amet.</div>
+    <div>Incidunt tempore illo rem vero!</div>
+    <div>Quo iure sequi dolorem nihil!</div>
+    <div>Doloremque voluptatem ab assumenda nesciunt.</div>
+    <div>Harum possimus consectetur incidunt maiores.</div>
+</body>
+
+</html>

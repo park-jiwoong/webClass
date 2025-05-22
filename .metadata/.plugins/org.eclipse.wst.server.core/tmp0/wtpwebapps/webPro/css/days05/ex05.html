@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[CSS 2D 변환]</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div{
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid;
+
+            /*
+            CSS 2D 변환 - 이동 
+            현재 위치를 기준으로 x, y 축으로 이동.
+            */
+            /* translate: translate(50px, 100px); */
+
+            /* CSS 2D 변환 - 회전
+                        시계방향(양수 각도), 반시계방향(음수 각도) 회전
+            */
+            /* transform: rotate(20deg); 시계방향 */
+            /* transform: rotate(-20deg); 반시계방향 회전*/
+
+            /* CSS 2D 변환 - 크기 조정(축소 / 확대) */
+            /* 너비 1/2배, 높이 3배 확대 */
+            /* transform: scale(0.5, 2); */
+            /* transform: scaleX(0.5); */
+            /* transform: scaleY(2); */
+
+            /* CSS 2D 변환 - 기울기 */
+            /* transform: skewX(45deg); x 축에 따라 45도 기울기 */
+            /* transform: skewY(45deg); y 축에 따라 45도 기울기 */
+            /* transform: skew(20deg, 0); */
+            transform: matrix(1, -0.3, 0, 1, 0, 0);
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <pre>
+    1) CSS 2D 변환
+        ㄴ 요소 이동,   회전,   크기 조정, 기울이기
+            translate  rotate   scale   skew
+                                scaleX  skewX
+                                scaleY  skewY
+            크기조정, 기울기, 이동                                
+            약식: matrix(scaleX, skewY, skewX, scaleY, translateX, translateY);
+
+        ㄴ transform 속성 == 변환
+
+    2) CSS 3D 변환
+  </pre>
+    <div>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus maiores commodi aspernatur deserunt esse
+        architecto eius?
+    </div>
+</body>
+
+</html>

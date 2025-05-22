@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert title here</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<!--
+    자동완성기능: 사용자 이전 입력한 값을 기반으로 확인
+   우효성 검사: novalidate="novalidate"
+-->
+
+<body>
+    <form novalidate="novalidate" autocomplete="on" action="ex01.html" method="get" target="_blanks"> <!-- autocomplete 자동완성 기능: 사용자 이전 입력한 값을 기반으로 자동 완성 -->
+        ID: <input type="text" name="id" value="admin" readonly="readonly"> <!-- readonly는 일기전용-->
+        <br>
+        <!-- Email: <input disabled="disabled" type="email" value="admin@naver.com"> disabled 비활성화, 서버 전송이 되지 않는다. -->
+        Email: <input type="email" value="admin@naver.com">
+        <br>
+        phone: <input type="text" pattern="[0-9]{3}-\d{4}-\d{4}">
+        <br>
+        KOR: <input type="number" min="0" max="100" step="2">
+        <br>
+        Time: <input type="time"><br> 
+        URL: <input type="url"><br> 
+        search: <input type="search"><br> 
+
+        <input type="submit">
+    </form>
+</body>
+
+</html>

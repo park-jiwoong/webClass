@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+ 	span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ 	}  
+	</style>
+</head>
+<body>
+<header>
+    <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+    <ul>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        
+    </ul>
+</header>
+<div>
+    <xmp class="code">
+        [JSON]
+        json.org
+        데이터를 주고 받기 위한 표준
+        
+        가족 정보 데이터 교환
+        1) 텍스트 형식의 문자열 ex08_family.txt
+        2) 
+    </xmp>
+
+</div>
+
+</body>
+
+</html>

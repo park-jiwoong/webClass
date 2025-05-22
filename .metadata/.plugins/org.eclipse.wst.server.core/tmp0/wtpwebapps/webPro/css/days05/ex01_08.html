@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[다중 배경 이미지]</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        html, body{
+            /* border: 1px solid red; */
+            height: 100%;
+        }
+
+        .parallax{
+            /* border: 1px solid green; */
+            height: 100%;
+            
+            background: url('../images/img_parallax.jpg')
+                no-repeat center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        [parallax]
+        사전적인 의미: 시차, 시차를 두다
+        시차 ? 관측위치에 따라 물체의 위치나 방향의 차이
+    -->
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, aperiam. Optio obcaecati natus expedita unde facere eaque ratione voluptas eos! Libero pariatur ipsum quaerat, atque perspiciatis repellat illo dolor ut.</p>
+    <div class="parallax"></div>
+    <div style="height: 500px;background: fuchsia;font-size: 20px"></div>
+    <div class="parallax"></div>
+
+</body>
+
+</html>

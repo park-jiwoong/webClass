@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 5. 13. 오전 11:35:57</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code"> 
+    [js 객체 생성자 함수]
+    - 동일한 유형의 많은 객체를 생성할 때 사용되는 함수
+    - 생성자 함수의 이름은 대문자로 시작( 권장 )
+    
+    
+    // 필드 + 메서드 선언 + 추가 + 제거
+    const person = {};
+    const person = new Object();
+    
+    
+    // js 내장된 [객체 생성자]
+    new Object();
+
+    const m = [];   //  권장
+    const m = new Array();  X
+    
+    new Date();
+    new RegExp();
+    new Function();
+    new Map();
+    new Set();
+    
+    
+    ** 연산자 2**3
+    전역객체 Math.pow(2,3)
+    
+  </xmp>
+</div>
+
+<script>
+   // js 생성자 함수
+   function Person(name, age, gender){
+	   // 객체 자기 자신을 나타내는 this
+	   // alert( this ); [object Object]
+	   this.name = name;
+	   this.age = age;
+	   this.gender = gender;
+	   // 메서드
+	   this.info = function (){
+		   return this.name + " / " + this.age;
+	   }
+   }
+   
+   const p1 = new Person("홍길동1", 20, true);
+   const p2 = new Person("홍길동2", 21, false);
+   const p3 = new Person("홍길동3", 22, true);
+   
+   // 새로운 멤버(필드+메서드) 추가 : 2가지 방법
+   // 1) 객체를 사용 ( p1, p2, p3)
+   p1.address = "서울 강남구";
+   p1.changeName = function (name){
+	   this.name = name;
+   }
+   
+   // 2) 객체 생성자에 새로운 멤버를 추가 X
+   //    예) Person.address = "주소"; X
+   // => 해결 방법  prototype 속성으로 추가.. 
+   Person.prototype.address = "주소";
+   Person.prototype.changeName = function (name){
+	   this.name= name;
+   }
+   
+   
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

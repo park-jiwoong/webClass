@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert title here</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div {
+            border: 1px solid gray;
+            background-color: lightblue;
+
+            /*
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px;
+            */
+
+            /* 약식으로 top rigth bottom left 순서로 주면 간략하게 사용가능
+            padding: 50px 30px 50px 80px;*/
+
+            /* padding: 50px 50px 50px 50px; */
+            /* padding: 50px; */
+
+            /*             t    r   b   l*/
+            /* padding: 50px 80px 50px 80px; */
+            /* padding:  50px, 80px; */
+
+            /*            t    r    b       l*/
+            /* padding: 50px 100px 30px; */
+            /* padding: 50px 100px 30px 100px; */
+
+            /* padding:   1)px, pt, cm etc; */
+            /*            2)부모요소의 너비 기준으로 백분율 % */
+            /*            3)inherits 상속 */
+        }
+
+        .demo { /*특이성 10점*/
+            width: 200px;
+        }
+
+        div.demo.second {   /* 1+ 10 + 10 */
+            color: white;
+        }
+
+        /* div:nth-child(2){ */
+        div:nth-of-type(2) {
+            color: red;
+        }
+
+        /* div:nth-child(3){ */
+        /* div:nth-of-type(3){  1 + 10
+            color: blue;
+        } 
+        */
+
+         /* div:last-child{*/
+        div:last-of-type{
+            color: green;
+            border: 10px solid red;
+            padding: 25px;
+        }
+
+        *{
+            box-sizing: border-box; /* 너비 px 맞출때 전부 하나로 레이아웃 맞춰줌 GOAT */
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--
+        [패딩(padding)]
+        테두리(border): 안쪽 여백 <-> 내용물(content)
+        top, right, bottom, left
+        ps, pt, cm, % 등등 (음수 X)
+    -->
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+
+    <div class="demo">Lorem ipsum dolor sit amet.</div>
+
+    <div class="demo second">Lorem ipsum dolor sit amet.</div>
+
+    <p>XXX</p>
+</body>
+
+</html>

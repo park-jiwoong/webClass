@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<style>
+		body{
+			color: blue;
+			background-color: lightblue;
+		}
+
+		h3{
+			color: white;
+			background-color: #000;
+		}
+
+		div{
+			color: red;
+
+			/* 텍스트 방향 */
+			direction: rtl;
+		}
+
+		p#p1{
+			border: 1px solid black;
+			padding: 5px;
+			width: 250px;
+			height: 100px;
+
+			/* 컨테이너에 내용물이 넘친 경우: overflow */
+			overflow: hidden;
+
+			/* 텍스트의 한 행을 끝을 맞춰서 정렬 */
+			text-align: justify;
+		}
+
+		/* 텍스트 속의 이미지를 수직 정렬 */
+		/* 요소의 수직 정렬을 설정하는 속성: vertical-align */
+		img.a{vertical-align: baseline;}
+		img.b{vertical-align: text-bottom;}
+		img.c{vertical-align: text-bottom;}
+		img.d{vertical-align: sub;}
+		img.e{vertical-align: super;}
+
+	</style>
+</head>
+<body>
+	<h3>CSS 텍스트 서식 지정.</h3>
+	<!--
+		[텍스트 서식]
+		1. 텍스트 색상
+		텍스트 정렬
+		text=-align: center, right, left, justify
+		text-align-last 속성: 텍스트의 마지막 줄을 정렬.
+
+		2. 텍스트 장식 html.ex04_02
+		3. 텍스트 변환 html.ex04_02
+		4. 텍스트 간격 html.ex04_03
+		5. 텍스트 그림자 html.ex04_04
+	-->
+		<!-- div>lorem5^p#p1>lorem^p*5>lorem5 -->
+		<div>Lorem ipsum dolor sit amet.</div>
+		<p id="p1">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+			Aliquam error ab, ratione dolore in, voluptatibus earum modi cumque, quae hic culpa veritatis doloremque nisi explicabo id voluptates?
+			Autem, saepe laborum.</p>
+		<p>Lorem<img src="../images/sqpurple.gif" alt="" class="a" style="width: 9px;height: 9px;">ipsum dolor sit amet.</p>
+		<p>Ducimus<img src="../images/sqpurple.gif" alt="" class="b" style="width: 9px;height: 9px;">perferendis nihil ratione iste!</p>
+		<p>Libero<img src="../images/sqpurple.gif" alt="" class="c" style="width: 9px;height: 9px;">possimus atque dolore dolorem!</p>
+		<p>Illo<img src="../images/sqpurple.gif" alt="" class="d" style="width: 9px;height: 9px;">usto quisquam fugit consequuntur.</p>
+		<p>Rerum<img src="../images/sqpurple.gif" alt="" class="e" style="width: 9px;height: 9px;">officiis distinctio aperiam a.</p>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 2D 변환 - 회전</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div {
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid;
+            /* 부드러운 회전을 위해 추가 (선택사항, setInterval 간격과 비슷하게) */
+        }
+    </style>
+</head>
+
+<body>
+    <input id="rdoClockWise" type="radio" name="direction" value="1" checked="checked">
+    <label for="rdoClockWise">시계방향</label>
+
+    <input id="rdoReverseClockWise" type="radio" name="direction" value="-1">
+    <label for="rdoReverseClockWise">반시계방향</label>
+    <br> 회전속도 :
+    <input type="range" min="10" max="1000" value="100" id="rspeed">
+    <br>
+    <button>회전 시작</button>
+    <button disabled="disabled">회전 멈춤</button>
+
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+
+   <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		Sit modi eos eum facere quod architecto!</div>
+
+    <script>
+        // 회전 시킬 각도
+        let angle = 1; // number 숫자
+
+        // 회존 방향 - 시계(1), 반시계(-1)
+        let direction = 1;
+
+        // id
+        let timer;
+
+        // 회전 시작 버튼
+        const btnStart = document.querySelector("body > button:first-of-type")
+        // 회전 멈춤 버튼
+        const btnStop = document.querySelector("body > button:last-of-type")
+
+      	// 회전속도 요소
+        const rspeed = document.querySelector("#rspeed");
+
+        // 회전 시작 버튼 body>button: nth-child(8)
+        btnStart.onclick = function () {
+            // alert("1");
+
+            // 두 개의 radio 버튼 중에 checked 된 상태의 radio 버튼의 value 속성값을 얻어와서
+            // direction 변수에 저장
+            direction = document.querySelector('input[name="direction"]:checked').value;
+
+            // 1초 간격으로(마다) targetRotate() 함수를 계속 호출하는 코딩
+
+            // 0.01 초 마다 targetRotate() 함수를 계속 호출하는 코딩
+            // setInterval()
+            timer = setInterval(targetRotate, rspeed.value);
+
+            // 회전시작 버튼은 비활성화
+            btnStart.disabled = true;
+            // 회전멈춤 버튼은 활성화
+            btnStop.disabled = false;           
+        }
+
+        // 회전 멈춤 버튼 body > button: nth-child(9)
+        btnStop.onclick = function () {
+            // alert("2");
+            clearInterval(timer);
+
+            // 회전시작 버튼은 활성화
+            btnStart.disabled = false;
+            // 회전멈춤 버튼은 비활성화
+            btnStop.disabled = true;
+        }
+
+        // java "1" + 1 => "11"+1 => "111"
+        function targetRotate() {
+            let target = document.querySelector("body > div");
+            //CSS 2D 변환 transform: rotate( 각도 )
+            target.style.transform = `rotate( ${angle}deg )`;
+            //js 문자열 -> 숫자(정수) 형 변환
+            //java integer.parseInt()
+            angle += parseInt(direction);
+            // angle parseInt( direction ) + angle;
+
+            console.log(angle);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규 표현식</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+
+        #items-container{
+            height: 200px;
+            overflow: auto;
+            border:  1px solid gray;
+            padding: 3px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+           https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/Option
+        </xmp>
+
+        항목수 :
+        <select id="s"></select>
+    </div>
+
+    <script>
+        const sel = document.querySelector("#s");
+        // js 배열
+        const options = ["four", "five", "sixz"];
+
+        options.forEach((element, key)=>{
+            console.log(`element:${element}, key:${key}`);
+            sel[key] = new Option(element, key);
+        });
+    </script>
+</body>
+
+</html>

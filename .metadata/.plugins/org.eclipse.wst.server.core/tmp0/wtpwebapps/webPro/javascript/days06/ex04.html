@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.0">
+    <title>[js 날짜]</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+            [js 날짜]
+            java - Date, Calendar, LocalDate, LocalTime, LocalDateTime 등등
+            js - Date
+        </xmp>
+
+    </div>
+    <script>
+        const d = new Date();
+
+        // May 15 2025 11:35:04 GMT+0900 (GMT+09:00)
+        document.write(d + "<br>");
+        document.write(d.toLocaleString() + "<br>");
+        document.write(d.toLocaleDateString() + "<br>");
+        document.write(d.toLocaleTimeString() + "<br>");
+
+        // 년
+        document.write(d.getFullYear() + "<br>");
+        // 월+1
+        document.write(d.getMonth() + 1 + "<br>");
+        // 일
+        document.write(d.getDate() + "<br>");
+        // 시
+        document.write(d.getHours() + "<br>");
+        // 분
+        document.write(d.getMinutes() + "<br>");
+        // 초
+        document.write(d.getSeconds() + "<br>");
+        // 밀초
+        document.write(d.getMilliseconds() + "<br>");
+        // 요일
+        document.write("일월화수목금토".at(d.getDay()) + "<br>");
+
+    </script>
+
+    <script>
+        // 우리 수료일이 무슨 요일인지 확인.
+        // 2025.8.12
+        /* getXXX(), setXXX()
+        const today = new Date();
+        // today.setFullYear(2025);
+        today.setMonth(8-1);
+        today.setDate(12);
+        document.write(today.toLocaleDateString() +"<br>");
+        // 0(일) 1(월) ~ 6(토)
+        today.getDay()
+        */
+
+        const today = new Date(2025, 8 - 1, 12);
+        document.write(today.toLocaleDateString() + "<br>");
+    </script>
+
+    <script>
+        //Date 객체 사용법
+        let start = Date.now(); //
+
+        // 시간이 오래 걸리는 어떤 작업
+        // doSomethingForALongTime();
+
+
+        let end = Date.now();
+
+        let elapsed = end - start; // 밀리초로 나타낸 경과시간
+    </script>
+</body>
+
+</html>

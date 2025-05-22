@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript의 형 변환 정리</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+        span.material-symbols-outlined {
+            vertical-align: text-bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="main"><a href="#" style="position: absolute;top:30px;">Park Jiwoung</a></h1>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+
+        </ul>
+    </header>
+    <div>
+        <xmp class="code">
+            [javascript의 형 변환 정리]
+            1) 문자열 -> 숫자 형변환
+            Number()
+            2) 숫자 -> 문자열 형변환
+            3) 날짜 -> 숫자 형변환
+            4) 숫자 -> 날짜 형변환
+            5) boolean-> 숫자 형변환
+            6) 숫자 -> boolean
+
+            [javascript 자료형 8가지]
+            Number
+            String
+            boolean
+            bigint
+            null
+            undfinded
+            symbol
+            object - array, set, map, function
+        </xmp>
+
+    </div>
+    <script>
+
+        // [1]
+        // let x = "5";
+        // // alert(typeof x); string 나옴
+        // let y = + x; // 숫자로 바꿔서 대입하고 싶음 (단항연산자 +)
+        // alert(typeof y); //number
+
+        // [2]
+        // let x = "admin"; // 문자열
+        // let y = + x;
+        // alert(y);   //NaN
+    </script>
+
+    <script>
+        // [3]
+        // let x = 123;
+        // let y = x + "";
+        // let y = String(x); // 직접 자료형을 문자열로 줄 수 있음
+        // let y = x.toString(); // toString() 으로도 줄 수 있음
+        // alert(typeof y); //string 문자열이 찍힘
+    </script>
+
+    <script>
+        // 날짜 -> 숫자 변환
+        // const d = new Date();
+        // let n = Number(d); // 날짜를 숫자로 바꿔줄 수 있음
+        // let n = d.getTime(); // 날짜를 돌려줄 수 있음
+        // alert(n); //1747355316709 -> 1747355343177
+
+        // 날짜 -> 문자열 변환
+        //Date().toString() == String(Date());
+    </script>
+
+    <script>
+        //boolean -> 숫자
+        // alert(Number(true)); // 1
+        // alert(Number(false)); // 0
+
+        // 0, null, undefined, "", NaN -> false
+        // 위의 값 제외한 모든 값        -> true
+        // alert( 5 + null); // 5
+        // alert("5" + null); // 5null
+
+        // "5" + 2     => "52"
+        // "5" - 2     => 3
+        // "5" * 2     => 10
+        // "5" / 2     => 2.5
+        // "5" * "2"   => 10
+    </script>
+</body>
+
+</html>

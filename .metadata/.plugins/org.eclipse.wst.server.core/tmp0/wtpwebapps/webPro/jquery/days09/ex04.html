@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025. 5. 20. 오전 11:17:14</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+  <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+  <script src="cookie.js"></script>
+  <style>
+    span.material-symbols-outlined {
+      vertical-align: text-bottom;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+    <ul>
+      <li><a href="#">로그인</a></li>
+      <li><a href="#">회원가입</a></li>
+    </ul>
+  </header>
+  <div>
+    <xmp class="code">
+      jquery 애니메이션 - animate() 메서드 사용
+      - animate({css 속성 매개변수}, speed, callback) 메서드
+      slow, fast
+      직접지정
+      애니메이션효과 지속시간.
+    </xmp>
+    <button>실행</button>
+    <div id="box"></div>
+  </div>
+  <script>
+    $("#box").css({
+      "width": "100px",
+      "height": "100px",
+      "position": "absolute",
+      "background-color": "aqua"
+    });
+
+    $("button").on("click", function(){
+      // $("#box").animate({left:"250px"});
+
+      // += -= 현재 요소의 위치 기준으로 상대값을
+      // $("#box").animate({left:"+=50px"
+      //     ,opacity:"0.5"
+      //     ,height:"+=50px"
+      //     ,width:"+=50px"
+      // });
+      // 미리 정의된 값을 사용  shiw, hide, toggle  ""
+      $("#box").animate({height:"toggle"});
+    });
+  </script>
+
+</body>
+
+</html>
